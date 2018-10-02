@@ -1,0 +1,13 @@
+<div class="row"><br></div>
+<div class="row"><br></div>
+<div class="row">
+  <div class="col-xs">
+    <div class="card geolocation-container">
+    </div>
+  </div>
+  <div class="col-xs">&nbsp;</div>
+  <div class="col-xs">Business Hours
+    <br> 6 PM - Until
+  </div>
+</div>
+<div class="row"><br></div>

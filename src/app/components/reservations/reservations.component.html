@@ -1,0 +1,59 @@
+<div class="container">
+    <!--<div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>-->
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+          <h4 class="reservation-header">Reservations</h4>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">&nbsp;</div>
+      <div class="col-sm-8 justify-content-center">
+        <div class="jumbotron reservation-jumbtron">
+          <form (ngSubmit)="submitNewReservation()" novalidate>
+            <div [formGroup]="reservationsForm">            
+              <input formControlName="firstName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="first name" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <input formControlName="lastName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="last name" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <input formControlName="email" class="form-control form-control-sm reservation-controls reservation-controls-row" type="email" placeholder="email" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <input formControlName="phone" class="form-control form-control-sm reservation-controls reservation-controls-row" type="phone" placeholder="phone" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <input formControlName="partySize" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Number of people in party" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <input formControlName="desiredReservationsDate" class="form-control form-control-sm reservation-controls reservation-controls-row" type="date" placeholder="desired date" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <input formControlName="desiredReservationsTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="time" placeholder="desired time" required>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <select formControlName="contactTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Best Contact Time" required>
+                <option value="" selected disabled hidden>Perferred Contact Time</option>
+                <option *ngFor="let time of contactTimes" value="{{time.contact_timeframe_id}}">{{time.contact_timeframe}}</option>
+              </select>
+            </div>
+            <div [formGroup]="reservationsForm">
+              <select formControlName="reservationType" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Reservation Type" requred>
+                <option value="" selected disabled hidden>Reservation Type</option>
+                <option *ngFor="let type of reservationTypes" value="{{type.inquiry_type_id}}">{{type.inquiry_type_name}}</option>
+              </select>
+            </div>
+            <div>
+              <button class="form-control reservation-button reservation-controls-row" type="submit">Make Reservation</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+     </div>
+  </div>
+  <br>
+  <br>

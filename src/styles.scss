@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import './sass/styles.scss';
+@import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+%menage-body {
+    //background-color: rgba(8, 156, 241, 0.877);
+    background-color: white;
+    margin-top: 0px;
+    margin-left: 0px;
+    overflow-x: hidden;
+}
+
+.html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.body {
+    @extend %menage-body;
+}
+

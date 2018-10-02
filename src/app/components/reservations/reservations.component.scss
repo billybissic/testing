@@ -1,0 +1,80 @@
+.reservation-background {
+    background-image: url("../../../assets/images/DSC_0073.JPG");
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: .7;
+    height: 45em;
+    width: 100%;
+    image-resolution: 1080;
+    background-repeat: no-repeat;
+}
+
+.reservation-jumbtron {
+    background-color: rgba(0, 0, 0, 0.849);
+    box-shadow: 0, 20px, 30px rgba(0, 0, 0, 0.795);
+}
+
+.reservation-header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
+    letter-spacing: 1pt;
+    font-size: 8pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 536;
+    text-align: center;
+    color:white;
+}
+
+.reservation-controls {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0pt;
+    font-size: 8pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    border-top: 0pt;
+    border-left: 0pt;
+    border-right: 0pt;
+    border-bottom-color: deeppink !important;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.reservation-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0pt;
+    font-size: 8pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    background-color: rgba(117, 117, 117, 0.349);
+    border-color: deeppink;
+    color: white;
+}
+
+.reservation-controls-row {
+    margin-bottom: 5px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.712);
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    //text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}

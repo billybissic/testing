@@ -1,0 +1,264 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-menage-calendar',
+  templateUrl: './menage-calendar.component.html',
+  styleUrls: ['./menage-calendar.component.scss']
+})
+export class MenageCalendarComponent implements OnInit {
+
+  currentYear: number;
+
+  previousMonthName: string;
+  firstDayOfPreviousMonth: Date = new Date();
+  lastDayOfPreviousMonth: Date = new Date();
+
+  currentMonthName: string;
+  currentDayName: string;
+  firstDayOfCurrentMonth: Date = new Date();
+  lastDayOfCurrentMonth: Date = new Date();
+
+  nextMonthName: string;
+  firstDayOfNextMonth: Date = new Date();
+  lastDayOfNextMonth: Date = new Date();
+
+  month = Array();
+  weekOne = Array();
+  weekTwo = Array();
+  weekThree = Array();
+  weekFour = Array();
+  weekFive = Array();
+  weekSix = Array();
+
+  constructor() { }
+
+  ngOnInit() {
+    this.currentMonthName = this.getCurrentMonthName();
+    this.currentYear = this.getCurrentYear();
+
+    this.currentDayName = this.getCurrentDayName();
+    this.firstDayOfCurrentMonth = this.getFirstDayOfCurrentMonth();
+    this.lastDayOfCurrentMonth = this.getLastDayOfCurrentMonth();
+    console.log(this.currentMonthName);
+    console.log("first day: " + this.firstDayOfCurrentMonth);
+    console.log("last day: " + this.lastDayOfCurrentMonth);
+
+    this.buildCurrentMonthArray();
+
+  }
+
+  getCurrentYear(): number {
+    var date = new Date();
+    return date.getFullYear();
+  }
+  
+  getCurrentMonthName(): string {
+    var date = new Date();
+    var name: string;
+    var month = date.getMonth();
+    
+    name = this.getMonthName(month);
+    console.log(name);
+    return name;
+  }
+
+  getCurrentDayName(): string {
+    var date = new Date();
+    var name: string;
+    var day = date.getDay();
+
+    name = this.getDayName(day);
+    console.log(name);
+    return name;
+  }
+
+  buildCurrentMonthArray(): void {
+    var calendarday = {};
+    var currentMonth = new Array();
+    var date = new Date();
+    date = new Date(date.getFullYear(), date.getMonth(), 1);
+    var day = date.getDay();
+    console.log("Day " + day);
+
+    var oldDate = new Date();
+
+   // var oldDate = new Date(date.getFullYear(), date.getMonth(), -1);
+   // console.log(oldDate);
+
+    var count = 0;
+    var arrayCount = 0;
+    var dayCursor = 0;
+    dayCursor = day - 1;
+
+    /* If day isnt zero, then the month display does not start on sunday. 
+       Get last week of the previous month to fill the calendar month */
+    if (count !== day) {
+        while (dayCursor !== 0 ) {
+
+          console.log(this.getDateFromDayCountOfCurrentDay(dayCursor * - 1));
+
+          /* uncomment if calendarday object doesnt work */
+          //currentMonth[arrayCount] = this.getDateFromDayCountOfCurrentDay(dayCursor * - 1);
+
+          /* create an object */
+          calendarday = {};
+          calendarday = { date: this.getDateFromDayCountOfCurrentDay(dayCursor) * - 1,
+                              day: this.getDayOfMonth( this.getDateFromDayCountOfCurrentDay(dayCursor * - 1)),
+                              dayName: this.getDayName(this.getDayOfMonth(this.getDateFromDayCountOfCurrentDay(dayCursor * - 1)))
+                            };
+          currentMonth.push(calendarday);
+          count = count + 1;
+          dayCursor = dayCursor - 1;
+          arrayCount = arrayCount + 1;
+          
+          console.log("Count: " + count);
+          console.log("Day Cursor: " + Math.abs(dayCursor));
+        }
+    }
+
+    count = 0;
+    var dayLimit = 0;
+    dayCursor = day;
+
+    
+    //console.log(this.getDaysInMonth(date));
+    dayLimit = this.getDaysInMonth(date);
+    
+    //console.log("Current Day Limit: " + dayLimit);
+
+    /* Now get days of the current month 
+     * + 8 to pick up the last day in the 
+     * month, plus the next week*/
+    while(count !== dayLimit + 8) {
+
+      //console.log(count);
+      //console.log("Day: " + count);
+      //console.log("Date: " + this.getDateFromDayCountOfCurrentDay(count));
+      //count = count + 1;
+
+      //currentMonth[arrayCount] = this.getDateFromDayCountOfCurrentDay(count);
+
+      calendarday = {};
+      calendarday = { date: this.getDateFromDayCountOfCurrentDay(count),
+        day: this.getDayOfMonth( this.getDateFromDayCountOfCurrentDay(count)),
+        dayName: this.getDayName(this.getDayOfMonth(this.getDateFromDayCountOfCurrentDay(count)))
+      };
+
+      currentMonth.push(calendarday);
+      count = count + 1;
+      arrayCount = arrayCount + 1;
+    }
+    
+    /* get days of the next month to fill the rest of calendar */
+
+    //get day the last day of the month fall on
+    console.log("Last Day of current Month: " + dayLimit);
+    console.log("Date");
+    console.log(this.getDateFromDayCountOfCurrentDay(dayLimit + 1));
+
+    this.month = currentMonth;
+    this.sliceMonth();
+  }
+
+  sliceMonth() {
+    this.weekOne = this.month.slice(0, 7);
+    this.weekTwo = this.month.slice(7, 14);
+    this.weekThree = this.month.slice(14, 21);
+    this.weekFour = this.month.slice(21, 28);
+    this.weekFive = this.month.slice(28, 35);
+    this.weekSix = this.month.slice(35, 42)
+  }
+  getDayOfMonth(date: Date) {
+    var inDate = date;
+    return inDate.getDate();
+  }
+
+  getDaysInMonth(anyDateInMonth: Date) {
+    return new Date(anyDateInMonth.getFullYear(),
+                    anyDateInMonth.getMonth()+1, 0).getDate();
+  }
+
+  getMonthName(month: number): string {
+    var monthNames = new Array();
+    monthNames[0] = "January";
+    monthNames[1] = "February";
+    monthNames[2] = "March";
+    monthNames[3] = "April";
+    monthNames[4] = "May";
+    monthNames[5] = "June";
+    monthNames[6] = "July";
+    monthNames[7] = "August";
+    monthNames[8] = "September";
+    monthNames[9] = "October";
+    monthNames[10] = "November";
+    monthNames[11] = "December";
+
+    //var date = new Date(year, month, day);
+    var name = monthNames[month];
+
+    return name;
+  }
+
+  getDayName(day: number): string {
+    var dayNames = new Array();
+    dayNames[0] = "Sunday";
+    dayNames[1] = "Monday";
+    dayNames[2] = "Tuesday";
+    dayNames[3] = "Wednesday";
+    dayNames[4] = "Thursday";
+    dayNames[5] = "Friday";
+    dayNames[6] = "Saturday";
+
+    var name = dayNames[day];
+    return name;
+  }
+
+  getFirstDayOfCurrentMonth(): any {
+    var date = new Date();
+    var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+    return firstDay;
+  }
+
+  getLastDayOfCurrentMonth(): any {
+    var date = new Date();
+    var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+    return lastDay;
+  }
+
+  getFirstDayOfPreviousMonth(): any {
+    var now = new Date();
+    var prevMonthFirstDate = new Date(now.getFullYear() - (now.getMonth() > 0 ? 0 : 1), (now.getMonth() - 1 + 12) % 12, 1);
+
+    return prevMonthFirstDate;
+  }
+
+  getLastDayOfPreviousMonth(): any {
+    var now = new Date();
+    var prevMonthLastDate = new Date(now.getFullYear(), now.getMonth(), 0);
+
+    return prevMonthLastDate;
+  }
+
+  getPreviousMonth(year: number, month: number, day: number): number {
+    var date = new Date(year, month, day);
+    var previousMonth = date.setMonth(date.getMonth() - 1);
+
+    return previousMonth;
+  }
+
+  getNextMonth(date: Date): string {
+    var date = date;
+    var nextMonth;
+
+    return nextMonth;
+  }
+
+  getDateFromDayCountOfCurrentDay(numberOfDays: number): any {
+    var date = new Date();
+    var oldDay = new Date(date.getFullYear(), date.getMonth(), numberOfDays);
+
+    return oldDay;
+  }
+}

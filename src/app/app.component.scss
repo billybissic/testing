@@ -1,0 +1,320 @@
+@import './../../node_modules/angular-calendar/css/angular-calendar.css';
+
+$page-width: 155%;
+
+@media screen and (max-width:2400px) {
+
+    .menage-landing-page {
+        margin-top: -15px;
+        background-color: rgba(41, 40, 40, 1);
+        height: 100vh;
+        width: 100%;
+    }
+
+    .event-calendar {
+        height: 100vh;
+        padding-top: 25px;
+        background-color: deeppink;
+    }
+
+    .entertainers-section {
+        background-color: rgb(39, 0, 44);
+        padding-top: 16px;
+        height: 100vh;
+    }
+
+    .photo-gallery-section {
+        padding-top: 25px;
+        height: 100vh;
+        width: 100vw;
+    }
+    .reservation-background {
+        background-image: url("../assets/images/DSC_0073.JPG");
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: .7;
+        height: 45em;
+        width: 100%;
+        image-resolution: 1080;
+        background-repeat: no-repeat;
+    }
+
+    /* reservation section styles */
+    .reservation-section {
+        background-color: black;
+        background-size: 100%;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        padding-top: 40px;
+        height: 100vh;
+        //height: 38em;
+        width: 100%;
+    }
+
+    /*.reservation-jumbtron {
+        background-color: rgba(0, 0, 0, 0.849);
+        box-shadow: 0, 20px, 30px rgba(0, 0, 0, 0.795);
+    }*/
+    
+    /*.reservation-header {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-variant-caps: all-small-caps;
+        font-weight: bolder;
+        letter-spacing: 1pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 1pt;
+        font-weight: 536;
+        text-align: center;
+        color:white;
+    }*/
+
+    /*%reservation-controls {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-variant-caps: all-small-caps;
+        letter-spacing: 0pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 1pt;
+        border-top: 0pt;
+        border-left: 0pt;
+        border-right: 0pt;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+    }*/
+
+    /*.reservation-button {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-variant-caps: all-small-caps;
+        letter-spacing: 0pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 1pt;
+        background-color: rgba(117, 117, 117, 0.349);
+        border-color: white;
+        color: white;
+    }*/
+    
+/*.reservation-controls-row {
+        margin-bottom: 5px;
+    }*/
+
+    .geolocation-container {
+        width: 100%;
+        height: 25px;
+    }
+
+    .geolocation-section {
+        background-color: rgba(117, 117, 117, .86);
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        height: 43em;
+        width: 100%;
+    }
+
+    .contact-p {
+        margin-left: 0px;
+        margin-bottom: 0px !important;
+        text-align: center !important;
+    }
+
+    %contact-section-font-fs {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: antiquewhite;
+        font-variant-caps: all-small-caps;
+        font-weight: bolder;
+        letter-spacing: 0pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 0pt;
+        font-weight: 536;
+        #contact-fullscreen {
+            display: none;
+        }
+        #contact-mobile {
+            display: block
+        }
+    }
+
+    .contact-section {
+        background-color: deeppink;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        box-shadow: 0, 20px, 30px rgba(0, 0, 0, .5);
+        width: 100%;
+        @extend %contact-section-font-fs;
+    }
+
+    %menage-icon-fs {
+        color: antiquewhite;
+        margin-left: 4px;
+        margin-right: 8px;
+    }
+    
+    .fa-icon {
+        @extend %menage-icon-fs;
+    }
+}
+
+@media screen and (max-width:720px) {
+    .menage-landing-page {
+        margin-top: -15px;
+        background-color: rgba(41, 40, 40, 1);
+        height: 100vh;
+        width: 100%;
+    }
+
+    .event-calendar {
+        height: 100vh;
+        padding-top: 16px;
+        background-color: deeppink;
+    }
+    /*.reservation-background {
+        background-image: url("../assets/images/DSC_0073.JPG");
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: .7;
+        height: 45em;
+        width: 100%;
+        image-resolution: 1080;
+        background-repeat: no-repeat;
+    }*/
+
+    /* reservation section styles */
+    .reservation-section {
+        background-color: black;
+        background-size: 100%;
+        margin-top: 15px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        height: 100vh;
+        //height: 38em;
+        width: 100%;
+    }
+    
+    /*.reservation-jumbtron {
+        background-color: rgba(58, 58, 58, 0.582);
+        box-shadow: 0, 20px, 30px rgba(0, 0, 0, 0.856);
+    }*/
+    
+    /*.reservation-header {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-variant-caps: all-small-caps;
+        font-weight: bolder;
+        letter-spacing: 1pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 1pt;
+        font-weight: 536;
+        text-align: center;
+        color:white;
+    }
+
+    .reservation-controls ::-webkit-input-placeholder {
+        color:red;
+    }
+    
+    .reservation-controls::-moz-placeholder {
+        color:red;
+    }
+    
+    .reservation-controls::-ms-placeholder {
+        color:red;
+    }
+    
+    .reservation-controls::placeholder {
+        color:red;
+    }*/
+    
+    /*.reservation-controls {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-variant-caps: all-small-caps;
+        letter-spacing: 0pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 1pt;
+        border-top: 0pt;
+        border-left: 0pt;
+        border-right: 0pt;
+        background-color: rgba(136, 136, 136, 0.527);
+        color: white;
+    }*/
+    
+    /*.reservation-controls-row {
+        margin-bottom: 5px;
+    }*/
+
+    .geolocation-container {
+        width: 100%;
+        height: 25px;
+    }
+
+    .geolocation-section {
+        background-color: rgba(117, 117, 117, .86);
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        height: 43em;
+        width: 100%;
+    }
+
+    .contact-p {
+        margin-left: 0px;
+        margin-bottom: 0px !important;
+        text-align: center !important;
+    }
+
+    %contact-section-font {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: antiquewhite;
+        font-variant-caps: all-small-caps;
+        font-weight: bolder;
+        letter-spacing: 0pt;
+        font-size: 8pt;
+        line-height: 9pt;
+        word-spacing: 0pt;
+        font-weight: 536;
+        #contact-fullscreen {
+            display: none;
+        }
+        #contact-mobile {
+            display: block
+        }
+    }
+
+    .contact-section {
+        background-color: deeppink;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        box-shadow: 0, 20px, 30px rgba(0, 0, 0, .5);
+        width: 100%;
+        @extend %contact-section-font;
+    }
+
+    %menage-icon {
+        color: antiquewhite;
+        margin-left: 4px;
+        margin-right: 8px;
+    }
+    
+    .fa-icon {
+        @extend %menage-icon;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.7%;}
+    .days li .active {padding: 2px;}
+    #day-full-names{ display: none; }
+    #day-abbreviated-names {display: block; }
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.7%;}
+    #day-full-names { display: none; }
+    #day-abbreviated-names { display: block; }
+}
+

@@ -1,0 +1,150 @@
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.table {
+    width: 100vw;
+}
+.table-header {
+    text-align: center;
+    background-color: white;
+    border-color: deeppink;
+    border-bottom: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant-caps: all-small-caps;
+    //width: 50px;
+}
+
+.calendar-header {
+    text-align: center;
+    vertical-align: center;
+    background-color: deeppink;
+    border-color: deeppink;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant-caps: all-petite-caps;
+    color: white;
+    padding: 0px;
+    border-spacing: 0px;
+    width: 100vw;
+}
+.calendar-day {
+    text-align: right;
+    vertical-align: top;
+    background-color: white;
+    border-color: deeppink;
+    border-bottom: 0px;
+    //width: 50px;
+}
+
+.last-week-in-month {
+    background-color: white;
+    border-color: deeppink;
+    text-align: right;
+    vertical-align: top;
+}
+.event-container-primary {
+    background: #ff00aa;
+    color: white;
+    float: left;
+}
+
+.event-container-secondary {
+    background: purple;
+    color: white;
+    float: left;
+}
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #ff00aa;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 0px 0px;
+    background-color: rgb(110, 0, 96);
+    //border: 1px;
+    border-color: red;
+    letter-spacing: 1px;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 14.1%;
+    color: rgb(255, 255, 255);
+    //border-style: solid;
+    //border-color: black;
+    
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.days {
+    padding: 0px 0px;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    font-size:12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+#day-full-names { display: block; }
+#day-abbreviated-names { display: none; }
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+    #day-full-names{ display: none; }
+    #day-abbreviated-names{ display: block; }
+}
+
+/*@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.7%;}
+    .days li .active {padding: 2px;}
+    #day-full-names{ display: none; }
+    #day-abbreviated-names {display: block; }
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.7%;}
+    #day-full-names { display: none; }
+    #day-abbreviated-names { display: block; }
+}*/

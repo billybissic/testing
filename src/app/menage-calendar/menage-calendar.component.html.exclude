@@ -1,0 +1,60 @@
+<table class="table table-bordered">
+    <thead id="day-abbreviated-names">
+        <tr>
+            <th colspan="7" class="calendar-header"><br><br><br><br><br>{{currentMonthName}}<br>{{currentYear}}<br><br><br><br><br></th>
+        </tr>
+
+        <!--<tr id="day-abbreviated-names">-->
+        <tr>
+            <th scope="col" class="table-header">Su</th>
+            <th scope="col" class="table-header">Mo</th>
+            <th scope="col" class="table-header">Tu</th>
+            <th scope="col" class="table-header">We</th>
+            <th scope="col" class="table-header">Th</th>
+            <th scope="col" class="table-header">Fr</th>
+            <th scope="col" class="table-header">Sa</th>
+        </tr>
+
+        
+    </thead>
+
+    <thead id="day-full-names">
+        <tr>
+            <th colspan="7" class="calendar-header"><br><br><br><br><br>{{currentMonthName}}<br>{{currentYear}}<br><br><br><br><br></th>
+        </tr>
+        <tr>
+        <!--<tr id="day-full-names">-->
+            <th scope="col" class="table-header">Sunday</th>
+            <th scope="col" class="table-header">Monday</th>
+            <th scope="col" class="table-header">Tuesday</th>
+            <th scope="col" class="table-header">Wednesday</th>
+            <th scope="col" class="table-header">Thursday</th>
+            <th scope="col" class="table-header">Friday</th>
+            <th scope="col" class="table-header">Saturday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row" *ngFor="let weekOneDay of weekOne" class="calendar-day">{{weekOneDay.day}}</td>
+        </tr>
+
+        <tr>
+            <td scope="col" *ngFor="let weekTwoDay of weekTwo" class="calendar-day">{{weekTwoDay.day}}</td>
+        </tr>
+
+        <tr>
+            <td scope="col" *ngFor="let weekThreeDay of weekThree" class="calendar-day">{{weekThreeDay.day}}</td>
+        </tr>
+
+        <tr>
+            <td scope="col" *ngFor="let weekFourDay of weekFour" class="calendar-day">{{weekFourDay.day}}</td>
+        </tr>
+
+        <tr>
+            <td scope="col" *ngFor="let weekFiveDay of weekFive" class="calendar-day">{{weekFiveDay.day}}</td>
+        </tr>
+        
+        <tr>
+            <td scope="col" *ngFor="let weekSixDay of weekSix" class="last-week-in-month">{{weekSixDay.day}}</td>
+        </tr>
+    </tbody>

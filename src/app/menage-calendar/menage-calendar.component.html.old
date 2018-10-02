@@ -1,0 +1,47 @@
+<div class="month">      
+  <ul>
+    <li class="prev"><a href="#">&#10094;</a></li>
+    <li class="next"><a href="#">&#10095;</a></li>
+    <li>
+      {{currentMonthName}}<br>
+      <span style="font-size:18px">{{currentYear}}</span>
+    </li>
+  </ul>
+</div>
+
+<div id="day-full-names">
+<ul class="weekdays">
+  <li>Sunday</li>
+  <li>Monday</li>
+  <li>Tuesday</li>
+  <li>Wednesday</li>
+  <li>Thursday</li>
+  <li>Friday</li>
+  <li>Saturday</li>
+</ul>
+</div>
+
+<div id="day-abbreviated-names">
+  <ul class="weekdays">
+    <li>Su</li>
+    <li>Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+  </ul>
+</div>
+
+<ul class="days">  
+<li *ngFor="let day of month" ngClick="onDayClick()">
+                                           <div class="row justify-content-end">{{day.day}}</div>
+                                           <div class="row justify-content-start">
+                                              <div class="container float-right event-container-primary">Event</div>
+                                          </div>
+                                          <div class="row justify-content-start">
+                                              <div class="container float-right event-container-secondary">Event 2</div>
+                                          </div>
+                                              
+  </li>
+</ul>

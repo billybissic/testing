@@ -1,0 +1,47 @@
+import { Component, OnInit } from '@angular/core';
+import * as angular from 'angular';
+
+@Component({
+  selector: 'app-geolocation',
+  templateUrl: './geolocation.component.html',
+  styleUrls: ['./geolocation.component.scss']
+})
+export class GeolocationComponent implements OnInit {
+
+  constructor() { }
+
+  gpsError: string;
+  gpsLatitude: string = "";
+  gpsLongitude: string = "";
+  gpsAPIKey: string;
+
+  ngOnInit() {
+    this.gpsLatitude = "30.2368252";
+    this.gpsLongitude = "-93.3043197";
+    this.gpsAPIKey = "AIzaSyDVHMue5uEBZXxAlxdhEDdDFxe4KsDF_wc";
+
+    this.showPosition(this.gpsLatitude + "," + this.gpsLongitude);
+  }
+
+  getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.showPosition);
+    } else { 
+        this.gpsError = "Geolocation is not supported by this browser.";
+        console.log(this.gpsError)
+    }
+  }
+
+  showPosition(position) {
+    /*this.gpsLatitude = position.coords.latitude;
+    this.gpsLongitude = position.coords.longitude;*/
+
+    var image_url = "http://maps.google.com/maps/api/staticmap?center=" +
+    this.gpsLatitude + "," + this.gpsLongitude + "&zoom=14&size=1080x1024&key=" +
+    this.gpsAPIKey;
+
+    console.log(image_url);
+    console.log(this.gpsLatitude);
+    console.log(this.gpsLongitude);
+  }
+}

@@ -1,0 +1,22 @@
+@media screen and (min-width: 300px) and (max-width: 399px) {
+
+    .geolocation-container {
+        //background-color: rgba(117, 117, 117, .86);
+        background-image: url("../../../assets/images/staticmap.png");
+        height: 300px;
+        width: 170%;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 2em;
+        margin-right: 10em;
+        float: left;
+        position: relative;
+
+        border-right: 2px;
+        border-left: 2px;
+        border-top: 2px;
+        border-bottom: 1px;
+        border-color: deeppink;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, .5);
+    }
+}
