@@ -1,5 +1,6 @@
+<!-- Site Navigation -->
 <app-navigation></app-navigation>
-
+<!-- End of Site Navigation -->
 
 <section id="home" class="menage-landing-page">
   <div class="container">
@@ -16,14 +17,18 @@
   </div>
 </section>
 
-<div id='calendar'></div>
-
+<section id='events' class="event-timeline">
+<app-menage-timeline></app-menage-timeline>
 <!--event timeline section-->
 <!--<section id="calendar" class="event-calendar">-->
 <!--<app-menage-calendar></app-menage-calendar>-->
 <!--</section>-->
 <!-- end of event timeline section-->
+</section>
 
+<section id="entertainers" class="entertainers">
+  <app-entertainers></app-entertainers>
+</section>
 <!--<section id="entertainers" class="entertainers-section">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -38,7 +43,7 @@
                   <h5>Dancer So'n'So</h5>
                   <p>Dancer So'n'So likes such and such and enjoys a good such and such.</p>
                 </div>
-              
+
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="./assets/images/demoshots/IMG_0055.JPG?auto=yes&bg=777&fg=555&text=Second Slide" alt="Second Slide">
@@ -46,7 +51,7 @@
                     <h5>Dancer Such'n'Such</h5>
                     <p>Dancer Such'n'Such enjoys doing so'n'so and spends her spare time doing this and that</p>
                   </div>
-             
+
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="./assets/images/demoshots/IMG_0053.JPG?auto=yes&bg=777&fg=555&text=Third Slide" alt="Third Slide">
@@ -77,6 +82,7 @@
 <!-- beginning of reservations section -->
 <section id="reservations" class="reservation-section reservation-background">
     <app-reservations></app-reservations>
+<br>
 </section>
 <!-- ending of reservations section-->
 
@@ -85,63 +91,17 @@
 <!--</section>-->
 
 <!--beginning of contact section -->
-<section class="contact-section">
-  <div class="row justify-content-center">
-    M&Egrave;NAGE
-  </div>
-  <div class="row justify-content-center">
-    Adult Club
-  </div>
-
-
-  <!-- social media brand icons -->
-  <div class="row justify-content-center">
-      <div class="col-sm"></div>
-  
-      <div class="col-xs">
-      <fa-icon [icon]="faInstagram" class="fa-icon"></fa-icon>
-      </div>
-  
-      <div class="col-xs"></div>
-  
-      <div class="col-xs">
-      <fa-icon [icon]="faFB" class="fa-icon"></fa-icon>
-      </div>
-  
-      <div class="col-xs"></div>
-  
-      <div class="col-xs">
-      <fa-icon [icon]="faGooglePlusG" class="fa-icon"></fa-icon>
-      </div>
-  
-      <div class="col-xs"></div>
-  
-      <div class="col-xs">
-      <fa-icon [icon]="faTwitter" class="fa-icon"></fa-icon>
-      </div>
-  
-      <div class="col-sm"></div>
-      <!-- end of social media brand icons-->
-  </div>
-  
-  <!-- ending of contact section -->
-
-
-  <div id="contact-fullscreen" class="row justify-content-center">
-    <p class="contact-p">3801 HWY 90 W. Westlake, LA, 70669 | P: (337) 426 0920</p>
-  </div>
-
-  <div id="contact-mobile" class="row justify-content-center">
-    <p class="contact-p">3801 HWY 90 W. Westlake, LA, 70669</p>
-    <p class="contact-p">P: (337) 426 0920</p>
-  </div>
-
-
-  
-  <div class="row">&nbsp;
-  <!-- empty row -->
-  </div>
+<section id="contact-section" class="contact-section">
+<app-contact></app-contact>
 </section>
 
-  
-
+<section class="legals-section">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col"><a class="legal-links" (click)="getTermsOfService()">Terms Of Service</a></div>
+      <div class="col"><a class="legal-links" (click)="getPrivacyPolicy()">Privacy Policy</a></div>
+      <div class="col"><a class="legal-links" (click)="getSiteDisclaimer()">Disclaimer</a></div>
+      <div class="col"><a class="legal-links" (click)="getContentWarning()">Content Warning</a></div>
+    </div>
+  </div>
+</section>

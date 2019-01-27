@@ -1,13 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
-@import './sass/styles.scss';
-@import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// @import './sass/styles.scss';
+// @import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+//@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&amp;subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Over+the+Rainbow');
+@import 'menage-theme.scss';
+
+/*$general-typography: mat-typography-config(
+  $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
+  $body-2:        mat-typography-level(1em, 2em, 600)
+);
+
+$secondary-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif'
+);*/
+
+
+// Be sure that you only ever include this mixin once!
+//@include mat-core($general-typography);
+
+//$default-theme: mat-dark-theme(mat-palette($mat-pink), mat-palette($mat-pink), mat-palette($mat-deep-orange));
+
+/*.default-theme {
+  @include angular-material-theme($default-theme);
+
+  color: mat-color($mat-pink, 400);
+
+  // $light-primary-text: mat-color($mat-pink, A50);
+  // $light-disabled-text: mat-color($mat-gray);
+  $light-focused: mat-color($mat-pink, 50);
+  // $light-secondary-text: mat-color($mat-gray);
+  // border-color: mat-color($mat-pink, A500);
+}*/
 
 %menage-body {
     //background-color: rgba(8, 156, 241, 0.877);
-    background-color: white;
+    //background-color: white;
     margin-top: 0px;
     margin-left: 0px;
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
 }
 
 .html {
@@ -17,4 +52,3 @@
 .body {
     @extend %menage-body;
 }
-

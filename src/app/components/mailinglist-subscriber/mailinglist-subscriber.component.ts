@@ -22,9 +22,9 @@ export class MailinglistSubscriberComponent implements OnInit {
     this.mailingListForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
-      birthday: new FormControl('', Validators.required),
+      birthday: new FormControl('', [Validators.required]),
       emailAddress: new FormControl('', [Validators.required, Validators.email])
-    })
+    });
   }
 
   resetMailingListForm() {
@@ -32,8 +32,8 @@ export class MailinglistSubscriberComponent implements OnInit {
                                    lastName: '',
                                    birthday: '',
                                    emailAddress: ''});
-    this.mailingListForm.markAsUntouched;
-    this.mailingListForm.markAsPristine;
+    /*this.mailingListForm.markAsUntouched;
+    this.mailingListForm.markAsPristine;*/
   }
 
   submitNewSubscriber() {

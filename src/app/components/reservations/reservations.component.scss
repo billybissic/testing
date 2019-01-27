@@ -1,5 +1,9 @@
+@import './../../../sass/variables.scss';
+@import './../../../../src/menage-palettes';
+@import '~@angular/material/theming';
+
 .reservation-background {
-    background-image: url("../../../assets/images/DSC_0073.JPG");
+    // background-image: url("../../../assets/images/DSC_0073.JPG");
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     opacity: .7;
@@ -9,20 +13,25 @@
     background-repeat: no-repeat;
 }
 
+.reservation-input {
+  width: 100%;
+  font-size: 1em;
+}
 .reservation-jumbtron {
     background-color: rgba(0, 0, 0, 0.849);
     box-shadow: 0, 20px, 30px rgba(0, 0, 0, 0.795);
 }
 
 .reservation-header {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-variant-caps: all-small-caps;
-    font-weight: bolder;
-    letter-spacing: 1pt;
-    font-size: 8pt;
+    font-family: 'Great Vibes', cursive;
+    //font-family: Verdana, Geneva, Tahoma, sans-serif;
+    //font-variant-caps: all-small-caps;
+    //font-weight: bolder;
+    //letter-spacing: 1pt;
+    font-size: 40pt;
     line-height: 9pt;
     word-spacing: 1pt;
-    font-weight: 536;
+    font-weight: 100;
     text-align: center;
     color:white;
 }
@@ -77,4 +86,12 @@ select option {
     color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     //text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.input {
+  font-size: 10px;
+}
+
+.mat-form-field.mat-form-field {
+  font-size: 12px;
 }

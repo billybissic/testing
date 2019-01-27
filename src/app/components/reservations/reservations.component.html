@@ -13,38 +13,71 @@
       <div class="col-sm-8 justify-content-center">
         <div class="jumbotron reservation-jumbtron">
           <form (ngSubmit)="submitNewReservation()" novalidate>
-            <div [formGroup]="reservationsForm">            
-              <input formControlName="firstName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="first name" required>
+            <div [formGroup]="reservationsForm">
+
+              <mat-form-field class="reservation-input">
+                <input matInput placeholder="First Name*" formControlName="firstName">
+              </mat-form-field>
+              <!--<input formControlName="firstName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="first name" required>-->
+
+              <mat-form-field class="reservation-input">
+                <input matInput placeholder="Last Name*" formControlName="lastName">
+              </mat-form-field>
+              <!--<input formControlName="lastName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="last name" required>-->
             </div>
             <div [formGroup]="reservationsForm">
-              <input formControlName="lastName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="last name" required>
+              <mat-form-field class="reservation-input">
+                <input matInput placeholder="Email*" formControlName="email">
+              </mat-form-field>
+              <!--<input formControlName="email" class="form-control form-control-sm reservation-controls reservation-controls-row" type="email" placeholder="email" required>-->
             </div>
             <div [formGroup]="reservationsForm">
-              <input formControlName="email" class="form-control form-control-sm reservation-controls reservation-controls-row" type="email" placeholder="email" required>
+              <mat-form-field class="reservation-input">
+                <span matPrefix>+1 &nbsp;</span>
+                <input matInput placeholder="Phone Number (###)-###-####" type="phone" formControlName="phone">
+              </mat-form-field>
+              <!--<input formControlName="phone" class="form-control form-control-sm reservation-controls reservation-controls-row" type="phone" placeholder="phone" required>-->
             </div>
             <div [formGroup]="reservationsForm">
-              <input formControlName="phone" class="form-control form-control-sm reservation-controls reservation-controls-row" type="phone" placeholder="phone" required>
+              <mat-form-field class="reservation-input">
+                <input matInput placeholder="Number of People in Party" type="number" formControlName="partySize">
+              </mat-form-field>
+              <!--<input formControlName="partySize" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Number of people in party" required>-->
             </div>
             <div [formGroup]="reservationsForm">
-              <input formControlName="partySize" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Number of people in party" required>
+              <input formControlName="desiredReservationsDate"  value="" class="form-control form-control-sm reservation-controls reservation-controls-row" type="date" placeholder="Select Date" required>
             </div>
             <div [formGroup]="reservationsForm">
-              <input formControlName="desiredReservationsDate" class="form-control form-control-sm reservation-controls reservation-controls-row" type="date" placeholder="desired date" required>
+              <mat-form-field class="reservation-input">
+                <input matInput placeholder="Desired Time to Reserve" type="time" formControlName="desiredReservationsTime">
+              </mat-form-field>
+              <!--<input formControlName="desiredReservationsTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="time" placeholder="Select Time" required>-->
             </div>
             <div [formGroup]="reservationsForm">
-              <input formControlName="desiredReservationsTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="time" placeholder="desired time" required>
-            </div>
-            <div [formGroup]="reservationsForm">
-              <select formControlName="contactTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Best Contact Time" required>
+              <mat-form-field class="reservation-input">
+                <mat-select placeholder="Preferred Contact Time">
+                  <mat-option *ngFor="let time of contactTimes" [value]="time.contact_timeframe_id">
+                    {{time.contact_timeframe}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!--<select formControlName="contactTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Best Contact Time" required>
                 <option value="" selected disabled hidden>Perferred Contact Time</option>
                 <option *ngFor="let time of contactTimes" value="{{time.contact_timeframe_id}}">{{time.contact_timeframe}}</option>
-              </select>
+              </select>-->
             </div>
             <div [formGroup]="reservationsForm">
-              <select formControlName="reservationType" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Reservation Type" requred>
+              <mat-form-field class="reservation-input">
+                <mat-select placeholder="Preferred Reservation Type">
+                  <mat-option *ngFor="let type of reservationTypes" [value]="type.inquiry_type_id">
+                    {{type.inquiry_type_name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!--<select formControlName="reservationType" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Reservation Type" requred>
                 <option value="" selected disabled hidden>Reservation Type</option>
                 <option *ngFor="let type of reservationTypes" value="{{type.inquiry_type_id}}">{{type.inquiry_type_name}}</option>
-              </select>
+              </select>-->
             </div>
             <div>
               <button class="form-control reservation-button reservation-controls-row" type="submit">Make Reservation</button>

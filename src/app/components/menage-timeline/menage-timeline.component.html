@@ -1,0 +1,7 @@
+<div class="row">&nbsp;</div>
+<div class="row justify-content-center">
+  <h4 class="events-header">Events</h4>
+</div>
+<div *ngIf="timeline.length" class="container-fluid">
+  <app-horizontal-timeline [timelineElements]="timeline" [showContent]="true" [timelineWrapperWidth]="2000"></app-horizontal-timeline>
+</div>

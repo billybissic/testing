@@ -1,1 +1,8 @@
-$menage-pink: #fd00fa;
+@import '~@angular/material/theming';
+@import './../menage-palettes';
+@include mat-core();
+
+$menage-pink: mat-color($mat-menage-pink, 900);
+$menage-blue: mat-color($mat-menage-blue, 900);
+$menage-white: mat-color($mat-menage-blue, 50);
+

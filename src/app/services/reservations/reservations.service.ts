@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-//import 'rxjs/add/operator/map';
-//import 'rxjs/add/operator/catch';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/catch';
 
 import { Reservation } from './../../controllers/reservations/reservation';
 
@@ -12,21 +12,21 @@ import { Reservation } from './../../controllers/reservations/reservation';
 })
 export class ReservationsService {
 
-  constructor(private http:Http) { }
+  constructor(private http: Http) { }
 
-  serverUrl = 'http://www.menageadultclub.com:8080/bookinginquiry-service-uat/BookingInquiryServices/';
-  //serverUrl = 'http://localhost:8080/bookinginquiry-service/BookingInquiryServices/';
+  // serverUrl = 'http://www.menageadultclub.com:8080/bookinginquiry-service-uat/BookingInquiryServices/';
+  serverUrl = 'http://localhost:8080/bookinginquiry-service/BookingInquiryServices/';
 
   addNewReservation(reservation: Reservation): Observable<any>{
-    let url = this.serverUrl + "createInquiry"; 
-    //console.log(reservation);
+    const url = this.serverUrl + 'createInquiry';
+    // console.log(reservation);
     return this.http.post(url, reservation)
     .pipe(map(this.extractData))
     .pipe(catchError(this.handleErrorObservable));
   }
 
   getContactTimes() {
-    let url = this.serverUrl + "getContactTimes";
+    const url = this.serverUrl + 'getContactTimes';
     return this.http.get(url)
       .pipe(map(
         (response: any) => {
@@ -37,7 +37,7 @@ export class ReservationsService {
   }
 
   getInquiryTypes() {
-    let url = this.serverUrl + "getInquiryTypes";
+    const url = this.serverUrl + 'getInquiryTypes';
     return this.http.get(url)
       .pipe(map(
         (response: any) => {
@@ -48,7 +48,7 @@ export class ReservationsService {
   }
 
   extractData(res: Response) {
-    let body = res.json();
+    const body = res.json();
     console.log(body);
     return body || {};
   }

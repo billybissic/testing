@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-
 import { ReservationsService } from './../../services/reservations/reservations.service';
 import { Reservation } from './../../controllers/reservations/reservation';
 
@@ -18,18 +17,19 @@ export class ReservationsComponent implements OnInit {
 
   contactTimes: any[] = [];
   reservationTypes: any[] = [];
-  
-  constructor(private reservationService: ReservationsService) { }
+
+  constructor(private reservationService: ReservationsService) {}
 
   ngOnInit() {
+
     this.reservationsForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', Validators.required),
       partySize: new FormControl('', Validators.required),
-      desiredReservationsDate: new FormControl('', Validators.required),
-      desiredReservationsTime: new FormControl('', Validators.required),
+      desiredReservationsDate: new FormControl('Select Date', Validators.required),
+      desiredReservationsTime: new FormControl('Select Time', Validators.required),
       contactTime: new FormControl('', Validators.required),
       reservationType: new FormControl('', Validators.required)
     })
@@ -60,8 +60,8 @@ export class ReservationsComponent implements OnInit {
       email: '',
       phone: '',
       partySize: '',
-      desiredReservationsDate: '',
-      desiredReservationsTime: '',
+      desiredReservationsDate: 'Select Date',
+      desiredReservationsTime: 'Select Time',
       contactTime: '',
       reservationType: ''
     });

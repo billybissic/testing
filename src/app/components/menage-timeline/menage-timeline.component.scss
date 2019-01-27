@@ -1,0 +1,13 @@
+@import './../../../sass/variables.scss';
+@import './../../../menage-palettes';
+@import '~@angular/material/theming';
+
+.events-header {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40pt;
+  line-height: 9pt;
+  word-spacing: 1pt;
+  font-weight: 100;
+  text-align: center;
+  color: $menage-pink;
+}

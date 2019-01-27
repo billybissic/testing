@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventTimelineComponent } from './event-timeline.component';
+import { LegalMessageComponent } from './legal-message.component';
 
-describe('EventTimelineComponent', () => {
-  let component: EventTimelineComponent;
-  let fixture: ComponentFixture<EventTimelineComponent>;
+describe('LegalMessageComponent', () => {
+  let component: LegalMessageComponent;
+  let fixture: ComponentFixture<LegalMessageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventTimelineComponent ]
+      declarations: [ LegalMessageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventTimelineComponent);
+    fixture = TestBed.createComponent(LegalMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

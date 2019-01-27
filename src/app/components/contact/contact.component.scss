@@ -1,0 +1,345 @@
+@import './../../../sass/variables.scss';
+@import './../../../menage-palettes';
+@import '~@angular/material/theming';
+
+/* page body styles */
+.contact-page {
+  height: 100vh;
+  background: mat-color($mat-menage-pink, 200);
+  overflow: hidden;
+}
+
+.map {
+  margin-left: 0;
+}
+
+.address {
+  padding-top: .8em;
+  margin-left: .8em;
+  display: block;
+}
+
+/* style mixins */
+@mixin map-frame {
+  border: 1px;
+  box-shadow: 0 5px 10px rgba(0,0,0, 0.795);
+}
+
+@mixin contact-header {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  color: white;
+}
+
+@mixin social-media-caption {
+           margin-top: 0;
+           padding: 0;
+           font-family: 'Parisienne', cursive;
+           color: white;
+}
+
+@mixin social-media-icons {
+  color: white;
+  padding-left: .2em;
+  padding-right: .2em;
+  padding-top: .1em;
+  margin-top: 0;
+}
+
+@mixin address-text {
+  text-align: center;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+@media screen and (max-width:3840px) {
+
+  %map-frame-desktop {
+    @include map-frame;
+  }
+
+  /*.map-frame {
+    @extend %map-frame-desktop;
+    width: 50vw;
+    height: 350px;
+  }*/
+
+  /*.address {
+    padding-top: .8em;
+    margin-left: .8em;
+    display: block;
+  }*/
+
+  .title {
+    padding-top: .8em;
+    display: block;
+    text-align: center;
+  }
+
+  %contact-header-desktop {
+    @include contact-header;
+  }
+
+  .contact-header {
+    @extend %contact-header-desktop;
+    margin-top: .2em;
+    font-size: 70pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 100;
+  }
+
+  %address-text-desktop {
+    @include address-text;
+  }
+  .address-text {
+    @extend %address-text-desktop;
+    line-height: .8em;
+    letter-spacing: 1pt;
+    font-size: .9em;
+    font-weight: 300;
+  }
+
+  %social-media-icons-desktop {
+    @include social-media-icons;
+  }
+
+  .socialmedia-icons {
+    @extend %social-media-icons-desktop;
+    font-size: 5.4em;
+    line-height: .3em;
+  }
+
+  %social-media-caption-desktop-width {
+    @include social-media-caption;
+  }
+
+  .socialmedia-caption {
+    @extend %social-media-caption-desktop-width;
+    font-size: 1.8em;
+    margin-left: .5em;
+    font-weight: 200;
+    line-height: 0;
+  }
+
+  %map-frame-mobile-width {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-mobile-width;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-height:2160px) and (min-height: 1025px) {
+  %map-frame-desktop-height {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-desktop-height;
+    height: 70vh;
+  }
+}
+
+@media screen and (max-height: 1024px) and (min-height: 821px) {
+
+  %address-text-tablet {
+    @include address-text;
+  }
+
+  .address-text {
+    @extend %address-text-tablet;
+    line-height: .9em;
+    letter-spacing: 0;
+    font-size: 1.3em;
+    font-weight: 100;
+  }
+
+  %map-frame-tablet-height {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-tablet-height;
+    height: 60vh;
+  }
+
+  %contact-header-tablet {
+    @include contact-header;
+  }
+
+  .contact-header {
+    @extend %contact-header-tablet;
+    font-size: 50pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 100;
+  }
+
+  %social-media-icons-tablet {
+    @include social-media-icons;
+  }
+
+  .socialmedia-icons {
+    @extend %social-media-icons-tablet;
+    font-size: 5em;
+    line-height: .3em;
+  }
+}
+
+@media screen and (max-height:820px) and (min-height:721px) {
+
+  %address-text-tablet-sm {
+    @include address-text;
+  }
+
+  .address-text {
+    @extend %address-text-tablet-sm;
+    line-height: .9em;
+    letter-spacing: 0;
+    font-size: .9em;
+    font-weight: 300;
+  }
+
+  %map-frame-tablet-height-sm {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-tablet-height-sm;
+    height: 60vh;
+  }
+
+  %contact-header-tablet-sm {
+    @include contact-header;
+  }
+
+  .contact-header {
+    @extend %contact-header-tablet-sm;
+    font-size: 50pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 100;
+  }
+
+  %social-media-icons-tablet-sm {
+    @include social-media-icons;
+  }
+
+  .socialmedia-icons {
+    @extend %social-media-icons-tablet-sm;
+    font-size: 4em;
+    line-height: .3em;
+  }
+}
+
+@media screen and (max-height:720px) and (min-height:400px) {
+
+  %address-text-mobile {
+    @include address-text;
+  }
+
+  .address-text {
+    @extend %address-text-mobile;
+    line-height: .8em;
+    letter-spacing: 0;
+    font-size: .8em;
+    font-weight: 300;
+  }
+
+  %map-frame-mobile-height {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-mobile-height;
+    height: 55vh;
+  }
+
+  %contact-header-mobile {
+    @include contact-header;
+  }
+
+  .contact-header {
+    @extend %contact-header-mobile;
+    font-size: 30pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 100;
+  }
+
+  %social-media-caption-mobile-height {
+    @include social-media-caption;
+  }
+
+  .social-media-caption-mobile-height {
+    @extend %social-media-caption-mobile-height;
+  }
+
+  %social-media-icons-mobile {
+    @include social-media-icons;
+  }
+
+  .socialmedia-icons {
+    @extend %social-media-icons-mobile;
+    font-size: 4.8em;
+    line-height: .3em;
+  }
+}
+
+@media screen and (max-width:400px) and (min-width:320px) {
+
+  %address-text-mobile-xs {
+    @include address-text;
+  }
+
+  .address-text {
+    @extend %address-text-mobile-xs;
+    line-height: .8em;
+    letter-spacing: 0;
+    font-size: .8em;
+    font-weight: 300;
+  }
+
+  %map-frame-mobile-height-xs {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-mobile-height-xs;
+    height: 55vh;
+  }
+
+  %contact-header-mobile-xs {
+    @include contact-header;
+  }
+
+  .contact-header {
+    @extend %contact-header-mobile-xs;
+    font-size: 30pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 100;
+  }
+
+  %social-media-caption-mobile-height-xs {
+    @include social-media-caption;
+  }
+
+  .social-media-caption-mobile-height {
+    @extend %social-media-caption-mobile-height-xs;
+  }
+
+  %social-media-icons-mobile-xs {
+    @include social-media-icons;
+  }
+
+  .socialmedia-icons {
+    @extend %social-media-icons-mobile-xs;
+    font-size: 2.8em;
+    line-height: .3em;
+  }
+}

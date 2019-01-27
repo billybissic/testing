@@ -1,0 +1,51 @@
+@import './../../../sass/variables.scss';
+@import './../../../menage-palettes';
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Over+the+Rainbow&effect=3d-float');
+
+.carousel {
+  height: 100vh;
+  margin-bottom: 0px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel .carousel-item {
+  width: 100%;
+  height: 100vh;
+  background-color: darkslategrey;
+}
+.carousel-inner {
+  max-height: 100vh;
+}
+.carousel-inner > .carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  .carousel-caption p {
+    margin-bottom: 0px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+}
+img {
+  background: darkslategrey;
+  opacity: .8;
+}
+
+p {
+  color: aliceblue;
+  font-family: 'Over the Rainbow', cursive;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: 'Over the Rainbow', cursive;
+  font-weight: 600;
+}

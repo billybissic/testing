@@ -1,0 +1,357 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import 'menage-palettes.scss';
+@include mat-core();
+
+@function set-background-theme($status-bar,
+                               $app-bar,
+                               $background,
+                               $hover,
+                               $card,
+                               $dialog,
+                               $disabled-button,
+                               $raised-button,
+                               $focused-button,
+                               $selected-button,
+                               $selected-disabled-button,
+                               $disabled-button-toggle,
+                               $unselected-chip,
+                               $disabled-list-options
+) {
+  @return(
+    status-bar: $status-bar,
+    app-bar: $app-bar,
+    background: $background,
+    hover: $hover,
+    card: $card,
+    dialog: $dialog,
+    disabled-button: $disabled-button,
+    raised-button: $raised-button,
+    focused-button: $focused-button,
+    selected-button: $selected-button,
+    selected-disabled-button: $selected-disabled-button,
+    disabled-button-toggle: $disabled-button-toggle,
+    unselected-chip: $unselected-chip,
+    disabled-list-options: $disabled-list-options
+  );
+}
+
+@function set-foreground-theme($base,
+                               $divider,
+                               $dividers,
+                               $disabled,
+                               $disabled-button,
+                               $disabled-text,
+                               $hint-text,
+                               $secondary-text,
+                               $icon,
+                               $icons,
+                               $text,
+                               $slider-min,
+                               $slider-off,
+                               $slider-off-active) {
+  @return (
+    base: $base,
+    divider: $divider,
+    dividers: $dividers,
+    disabled: $disabled,
+    disabled-button: $disabled-button,
+    disabled-text: $disabled-text,
+    hint-text: $hint-text,
+    secondary-text: $secondary-text,
+    icon: $icon,
+    icons: $icons,
+    text: $text,
+    slider-min: $slider-min,
+    slider-off: slider-off,
+    slider-off-active: $slider-off-active
+  );
+}
+
+@function create-new-theme($primary, $accent, $warn, $is-dark, $foreground, $background) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: $is-dark,
+    foreground: $foreground,
+    background: $background
+  );
+}
+
+/*
+** - Menage Primary Themes
+ */
+$menage-primary-foreground: (
+  base:              white,
+  divider:           $white-87-opacity,
+  dividers:          $white-87-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(black, 0.3),
+  disabled-text:     rgba(black, 0.3),
+  hint-text:         white,
+  secondary-text:    rgba(white, 0.6),
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        $white-12-opacity,
+  slider-off-active: $white-87-opacity,
+);
+
+$menage-primary-background: (
+  status-bar: white,
+  app-bar:    #a00037,
+  background: #fd00fa,
+  hover:      rgba(white, 0.04),
+  card:       #ff5c8d,
+  dialog:     white,
+  disabled-button: $white-87-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-87-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$menage-primary-theme: create-new-theme(mat-palette($mat-grey, 50, 200, 400),
+  //mat-palette($mat-pink),
+  mat-palette($mat-menage-pink),
+  //mat-palette($mat-pink, 50, 400, 700),
+  mat-palette($mat-menage-pink, 900),
+  false,
+  $menage-primary-foreground,
+  $menage-primary-background);
+
+/*
+** - Menage Primary Light Theme -
+ */
+.menage-primary-theme {
+  @include angular-material-theme($menage-primary-theme);
+}
+
+$menage-primary-light-foreground: (
+  base:              yellow,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    rgba(white, 0.7),
+  icon:              white,
+  icons:             white,
+  text:              black,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+$menage-primary-light-background: (
+  status-bar: deeppink,
+  app-bar:    map_get($mat-blue, 900),
+  background: #ff5c8d,
+  hover:      rgba(white, 0.04),
+  card:       map_get($mat-red, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$menage-primary-light-theme: create-new-theme(mat-palette($mat-pink),
+  mat-palette($mat-pink, 200, 400, 700),
+  mat-palette($mat-red, A700),
+  false,
+  $menage-primary-light-foreground,
+  $menage-primary-light-background
+);
+
+.menage-primary-light-theme {
+  @include angular-material-theme($menage-primary-light-theme);
+}
+/*
+** - Menage Primary Dark Theme -
+ */
+$menage-primary-dark-foreground: (
+  base:              yellow,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    rgba(white, 0.7),
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+$menage-primary-dark-background: (
+  status-bar: deeppink,
+  app-bar:    map_get($mat-blue, 900),
+  background: #a00037,
+  hover:      rgba(white, 0.04),
+  card:       map_get($mat-red, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$menage-primary-dark-theme: create-new-theme(mat-palette($mat-pink),
+  mat-palette($mat-pink, 200, 400, 700),
+  mat-palette($mat-red, A700),
+  true,
+  $menage-primary-dark-foreground,
+  $menage-primary-dark-background);
+
+@include angular-material-theme($menage-primary-dark-theme);
+
+$menage-secondary-foreground: (
+  base:              yellow,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    black,
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+$menage-secondary-background: (
+  status-bar: deeppink,
+  app-bar:    map_get($mat-blue, 900),
+  background: #ed4077,
+  hover:      rgba(white, 0.04),
+  card:       map_get($mat-red, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+$menage-secondary-theme: create-new-theme(mat-palette($mat-pink),
+  mat-palette($mat-pink, 200, 400, 700),
+  mat-palette($mat-red),
+  false,
+  $menage-secondary-foreground,
+  $menage-secondary-background);
+
+.menage-secondary-theme {
+  @include angular-material-theme($menage-secondary-theme);
+}
+
+$menage-secondary-light-foreground: (
+  base:              yellow,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    rgba(white, 0.7),
+  icon:              white,
+  icons:             white,
+  text:              black,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+$menage-secondary-light-background: (
+  status-bar: deeppink,
+  app-bar:    map_get($mat-blue, 900),
+  background: #ff77a6,
+  hover:      rgba(white, 0.04),
+  card:       map_get($mat-red, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+
+$menage-secondary-light-theme: create-new-theme(mat-palette($mat-pink),
+  mat-palette($mat-pink, 200, 400, 700),
+  mat-palette($mat-red, A700),
+  false,
+  $menage-secondary-light-foreground,
+  $menage-secondary-light-background);
+
+.menage-secondary-light-theme {
+  @include angular-material-theme($menage-secondary-light-theme);
+}
+
+$menage-secondary-dark-foreground: (
+  base:              yellow,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    rgba(white, 0.7),
+  icon:              white,
+  icons:             white,
+  text:              white,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+$menage-secondary-dark-background: (
+  status-bar: deeppink,
+  app-bar:    map_get($mat-blue, 900),
+  background: #b5004c,
+  hover:      rgba(white, 0.04),
+  card:       map_get($mat-red, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);
+$menage-secondary-dark-theme: create-new-theme(mat-palette($mat-pink),
+  mat-palette($mat-pink, 200, 400, 700),
+  mat-palette($mat-red, A700),
+  true,
+  $menage-secondary-dark-foreground,
+  $menage-secondary-dark-background);
+
+.menage-secondary-dark-theme {
+  @include angular-material-theme($menage-secondary-dark-theme);
+}
