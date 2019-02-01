@@ -18,6 +18,9 @@
   margin-left: .8em;
   display: block;
 }
+.row {
+  flex-wrap: nowrap;
+}
 
 /* style mixins */
 @mixin map-frame {
@@ -107,7 +110,7 @@
 
   .socialmedia-icons {
     @extend %social-media-icons-desktop;
-    font-size: 5.4em;
+    font-size: 1em;
     line-height: .3em;
   }
 
@@ -185,7 +188,7 @@
 
   .socialmedia-icons {
     @extend %social-media-icons-tablet;
-    font-size: 5em;
+    font-size: 1.6em;
     line-height: .3em;
   }
 }
@@ -231,7 +234,7 @@
 
   .socialmedia-icons {
     @extend %social-media-icons-tablet-sm;
-    font-size: 4em;
+    font-size: 1em;
     line-height: .3em;
   }
 }
@@ -265,7 +268,7 @@
 
   .contact-header {
     @extend %contact-header-mobile;
-    font-size: 30pt;
+    font-size: 40pt;
     line-height: 9pt;
     word-spacing: 1pt;
     font-weight: 100;
@@ -285,7 +288,7 @@
 
   .socialmedia-icons {
     @extend %social-media-icons-mobile;
-    font-size: 4.8em;
+    font-size: 1em;
     line-height: .3em;
   }
 }
@@ -319,7 +322,7 @@
 
   .contact-header {
     @extend %contact-header-mobile-xs;
-    font-size: 30pt;
+    font-size: 40pt;
     line-height: 9pt;
     word-spacing: 1pt;
     font-weight: 100;
@@ -339,7 +342,7 @@
 
   .socialmedia-icons {
     @extend %social-media-icons-mobile-xs;
-    font-size: 2.8em;
+    font-size: 1em;
     line-height: .3em;
   }
 }

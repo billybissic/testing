@@ -5,21 +5,19 @@ import { map, catchError } from 'rxjs/operators';
 
 import { Subscriber } from './../../controllers/subscribers/subscriber';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MailinglistSubscriberService {
 
   constructor(private http:Http) { }
 
-  serverUrl = 'http://www.menageadultclub.com:8080/mailinglist-service-uat/MailingListServices/';
-  //serverUrl = 'http://localhost:8080/mailinglist-service/MailingListServices/';
- 
-  
+  //serverUrl = 'http://www.menageadultclub.com:8080/mailinglist-service-uat/MailingListServices/';
+  serverUrl = 'http://localhost:8080/mailinglist-service/MailingListServices/';
+
+
   addNewSubscriber(subscriber: Subscriber): Observable<any>{
     console.log("inside service for addNewSubscriber");
-    let url = this.serverUrl + "subscribe"; 
-    //console.log(subscriber);
+    let url = this.serverUrl + "subscribe";
+    console.log(subscriber);
     //console.log(url);
     return this.http.post(url, subscriber)
     .pipe(map(this.extractData))
@@ -28,7 +26,7 @@ export class MailinglistSubscriberService {
 
   extractData(res: Response) {
     let body = res.json();
-    //console.log(body);
+    console.log(body);
     return body || {};
   }
 

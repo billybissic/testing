@@ -1,0 +1,36 @@
+<div class="event-jumper">
+  <mat-form-field>
+    <mat-select placeholder="Upcoming Events" (selectionChange)="jumpToEvent($event.value)">
+      <mat-option *ngFor="let eventJump of calendarJumps" [value]="eventJump._id" [ngx-scroll-to]="test">
+        {{eventJump.title}}, {{eventJump.start | amCalendar}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div id="timeline" class="timeline">
+  <mdb-card class="container left" *ngFor="let event of calendarEvents" id="{{event._id}}">
+    <!--Card image-->
+    <mdb-card-img src="{{getImageLink(event.details.image_names)}}" alt="{{event.details.title}}"></mdb-card-img>
+    <!--Card content-->
+    <mdb-card-body>
+
+      <!--Title-->
+      <!--<mdb-card-title>
+        <h4>{{event.details.title}}</h4>
+      </mdb-card-title>-->
+
+      <!--Text-->
+      <mdb-card-text>
+        <h4>{{event.start | amCalendar}}</h4>
+        <h4>{{event.title}}</h4>
+        {{event.details.description}}
+      </mdb-card-text>
+
+      <!--<a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>-->
+    </mdb-card-body>
+  </mdb-card>
+
+
+</div>
+

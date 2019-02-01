@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/catch';
+/*
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';*/
 
-import { Reservation } from './../../controllers/reservations/reservation';
+import { ReservationInterface } from './../../controllers/reservations/reservation.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class ReservationsService {
 
   constructor(private http: Http) { }
@@ -17,7 +17,7 @@ export class ReservationsService {
   // serverUrl = 'http://www.menageadultclub.com:8080/bookinginquiry-service-uat/BookingInquiryServices/';
   serverUrl = 'http://localhost:8080/bookinginquiry-service/BookingInquiryServices/';
 
-  addNewReservation(reservation: Reservation): Observable<any>{
+  addNewReservation(reservation: ReservationInterface): Observable<any>{
     const url = this.serverUrl + 'createInquiry';
     // console.log(reservation);
     return this.http.post(url, reservation)

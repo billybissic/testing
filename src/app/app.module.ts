@@ -1,7 +1,11 @@
-import { NgModule, OnInit} from '@angular/core';
+import { NgModule, OnInit, NO_ERRORS_SCHEMA} from '@angular/core';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import 'hammerjs';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { MomentModule } from 'ngx-moment';
+import { ErrorStateMatcher } from '@angular/material/core';
+
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { RouterModule, Routes } from '@angular/router';
 import { FileUploadModule } from 'ng2-file-upload';
+import { AmazingTimePickerModule } from 'amazing-time-picker';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -85,6 +90,9 @@ import { DeleteConfirmationComponent } from './components/modal-templates/delete
 
 /* services */
 import { ModalCommunicationService } from './services/modal-communication-service/modal-communication.service';
+import { EventManagementService } from './services/event-management-service/event-management.service';
+import { MailinglistSubscriberService } from './services/mailinglist-subscriber/mailinglist-subscriber.service';
+import { ReservationsService } from './services/reservations/reservations.service';
 import { ImageCardComponent } from './components/component-templates/image-card/image-card.component';
 import { LegalModalComponent } from './menage-modals/legal-modal/legal-modal.component';
 import { LegalMessageComponent } from './components/modal-templates/legal-message/legal-message.component';
@@ -94,8 +102,7 @@ import { EntertainersComponent } from './components/entertainers/entertainers.co
 import { ModalAgreeDisagreeComponent } from './modals/modal-agree-disagree/modal-agree-disagree.component';
 import { ContentWarningModalComponent } from './menage-modals/content-warning-modal/content-warning-modal.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { EventsComponent } from './components/mobile-components/events/events.component';
-import { MailinglistComponent } from './components/mobile-components/mailinglist/mailinglist.component';
+import { VerticalTimelineComponent } from './components/vertical-timeline/vertical-timeline.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -135,8 +142,7 @@ const appRoutes: Routes = [
     ContentWarningModalComponent,
     ModalVanillaComponent,
     ContactComponent,
-    EventsComponent,
-    MailinglistComponent,
+    VerticalTimelineComponent
   ],
   imports: [
     BrowserModule,
@@ -145,8 +151,8 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     NgxGalleryModule,
     NgbModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
     ScrollToModule.forRoot(),
-   // NgbModalModule,
     FormsModule,
     ReactiveFormsModule,
     FlatpickrModule.forRoot(),
@@ -193,11 +199,20 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    MomentModule,
+    AmazingTimePickerModule
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA
   ],
   providers: [
     ModalCommunicationService,
-    CookieService
+    MailinglistSubscriberService,
+    EventManagementService,
+    ReservationsService,
+    CookieService,
+    ErrorStateMatcher
   ],
   bootstrap: [
     AppComponent

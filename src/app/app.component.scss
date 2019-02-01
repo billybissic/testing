@@ -32,7 +32,9 @@ a:not([href]):not([tabindex]) {
     .event-timeline {
       height: 100vh;
       padding-top: 25px;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      background-color: #474e5d;
     }
 
     .event-calendar {
@@ -55,8 +57,8 @@ a:not([href]):not([tabindex]) {
     }
     .reservation-background {
         //background-image: url("../assets/images/DSC_0073.JPG");
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
+        //-webkit-filter: grayscale(100%);
+        //filter: grayscale(100%);
         opacity: .7;
         height: 45em;
         width: 100%;
@@ -75,7 +77,16 @@ a:not([href]):not([tabindex]) {
         //height: 38em;
         width: 100%;
         overflow: hidden;
+        color: $menage-pink;
     }
+
+    ::ng-deep .mat-select-content{
+      background-color: $menage-pink !important;
+    }
+
+  ::ng-deep .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {
+    background-color: $menage-pink;
+  }
 
     /*.reservation-jumbtron {
         background-color: rgba(0, 0, 0, 0.849);

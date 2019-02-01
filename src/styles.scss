@@ -7,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&amp;subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Over+the+Rainbow');
 @import 'menage-theme.scss';
+@import './sass/variables.scss';
+@import './menage-palettes';
 
 /*$general-typography: mat-typography-config(
   $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
@@ -52,3 +54,12 @@ $secondary-typography: mat-typography-config(
 .body {
     @extend %menage-body;
 }
+
+::ng-deep .mat-select-content{
+  background-color: $menage-pink !important;
+}
+::ng-deep .mat-select-panel {
+  background-color: $menage-pink;
+}
+
+

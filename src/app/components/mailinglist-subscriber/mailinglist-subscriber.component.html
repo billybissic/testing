@@ -21,7 +21,7 @@
             <input matInput placeholder="Last Name*" value="" formControlName="lastName">
           </mat-form-field>
         </div>
-        <div class="form-group col-sm-3">
+        <div [formGroup]="mailingListForm" class="form-group col-sm-3">
           <mat-form-field class="mailing-list-controls" color="accent">
             <input matInput [matDatepicker]="picker" value="" placeholder="Birthday*" formControlName="birthday">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -36,7 +36,8 @@
       </div>
       <div class="form row">
         <div class="form-group col-sm-3 mailinglist-btn">
-          <button type="submit" class="btn btn-block mailinglist-button">Subscribe</button>
+          <button mat-raised-button color="accent" class="form-control mailinglist-button" type="submit">Subscribe</button>
+          <!--<button type="submit" class="btn btn-block mailinglist-button">Subscribe</button>-->
         </div>
       </div>
     </form>

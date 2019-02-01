@@ -29,7 +29,10 @@
             "styles": [
               "./src/styles.scss",
               "./node_modules/font-awesome/css/font-awesome.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/font-awesome/scss/font-awesome.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "./node_modules/angular-bootstrap-md/scss/mdb-free.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -39,8 +42,11 @@
             },
             "scripts": [
               "./node_modules/jquery/dist/jquery.slim.js",
+              "./node_modules/chart.js/dist/Chart.js",
+              "./node_modules/hammerjs/hammer.min.js",
               "./node_modules/popper.js/dist/popper.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/smooth-scroll-into-view-if-needed/umd/smooth-scroll-into-view-if-needed.js"
             ]
           },
           "configurations": {

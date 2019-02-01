@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  faFacebookSquare,
+  faFacebookF,
   faInstagram,
   faSnapchatSquare
 } from '@fortawesome/free-brands-svg-icons';
@@ -12,7 +12,8 @@ import {
 })
 export class ContactComponent implements OnInit {
 
-  faFacebookSquare = faFacebookSquare;
+  show = false;
+  faFacebookF = faFacebookF;
   faInstagram = faInstagram;
   faSnapchatSquare = faSnapchatSquare;
 

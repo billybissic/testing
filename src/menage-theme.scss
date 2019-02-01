@@ -3,6 +3,9 @@
 @import 'menage-palettes.scss';
 @include mat-core();
 
+.mat-mini-fab {
+  font-size: 22px;
+}
 @function set-background-theme($status-bar,
                                $app-bar,
                                $background,
@@ -104,7 +107,7 @@ $menage-primary-background: (
   app-bar:    #a00037,
   background: #fd00fa,
   hover:      rgba(white, 0.04),
-  card:       #ff5c8d,
+  card: #ff00fe,
   dialog:     white,
   disabled-button: $white-87-opacity,
   raised-button: map-get($mat-grey, 800),
@@ -152,7 +155,7 @@ $menage-primary-light-foreground: (
 $menage-primary-light-background: (
   status-bar: deeppink,
   app-bar:    map_get($mat-blue, 900),
-  background: #ff5c8d,
+  background: #fd00fa,
   hover:      rgba(white, 0.04),
   card:       map_get($mat-red, 800),
   dialog:     map_get($mat-grey, 800),
@@ -243,7 +246,7 @@ $menage-secondary-foreground: (
 $menage-secondary-background: (
   status-bar: deeppink,
   app-bar:    map_get($mat-blue, 900),
-  background: #ed4077,
+  background: #fd00fa,
   hover:      rgba(white, 0.04),
   card:       map_get($mat-red, 800),
   dialog:     map_get($mat-grey, 800),

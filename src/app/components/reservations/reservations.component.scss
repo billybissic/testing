@@ -4,12 +4,12 @@
 
 .reservation-background {
     // background-image: url("../../../assets/images/DSC_0073.JPG");
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    opacity: .7;
+    // -webkit-filter: grayscale(100%);
+    // filter: grayscale(100%);
+    // opacity: .7;
     height: 45em;
     width: 100%;
-    image-resolution: 1080;
+    // image-resolution: 1080;
     background-repeat: no-repeat;
 }
 
@@ -50,6 +50,9 @@
     background-color: rgba(255, 255, 255, 0);
     color: white;
 }
+.mat-raised-button {
+  font-weight: 300;
+}
 
 .reservation-button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -58,11 +61,15 @@
     font-size: 8pt;
     line-height: 9pt;
     word-spacing: 1pt;
-    background-color: rgba(117, 117, 117, 0.349);
+    background-color: $menage-pink;
     border-color: deeppink;
     color: white;
 }
 
+
+::ng-deep .mat-select-panel {
+  background: $menage-pink;
+}
 .reservation-controls-row {
     margin-bottom: 5px;
 }
@@ -94,4 +101,5 @@ select option {
 
 .mat-form-field.mat-form-field {
   font-size: 12px;
+  width: 100%;
 }

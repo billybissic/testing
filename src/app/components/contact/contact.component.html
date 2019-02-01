@@ -1,4 +1,4 @@
-<div class="contact-page">
+<div class="contact-page" xmlns="http://www.w3.org/1999/html">
   <div class="container-fluid">
     <div class="row title justify-content-center">
       <div class="row">&nbsp;</div>
@@ -8,18 +8,18 @@
     </div>
     <div class="row">&nbsp;</div>
 
-      <div class="row justify-content-center">
-        <h4 class="address-text">M&egrave;nage</h4>
-      </div>
-      <div class="row justify-content-center">
-        <h4 class="address-text">Adult Club</h4>
-      </div>
-      <div class="row justify-content-center">
-        <h4 class="address-text">3801 HWY 90 W. Westlake, LA, 70669</h4>
-      </div>
-      <div class="row justify-content-center">
-        <h4 class="address-text">Phone: +1 (337) 426 0920</h4>
-      </div>
+    <div class="row justify-content-center">
+      <h4 class="address-text">M&egrave;nage</h4>
+    </div>
+    <div class="row justify-content-center">
+      <h4 class="address-text">Adult Club</h4>
+    </div>
+    <div class="row justify-content-center">
+      <h4 class="address-text">3801 HWY 90 W. Westlake, LA, 70669</h4>
+    </div>
+    <div class="row justify-content-center">
+      <h4 class="address-text">Phone: +1 (337) 426 0920</h4>
+    </div>
 
 
     <div class="row justify-content-center">
@@ -34,13 +34,30 @@
     </div>
 
     <div class="row">&nbsp;</div>
-      <div class="row justify-content-center">
-        <p class="socialmedia-caption">Dont forget to follow us!</p>
-      </div>
-      <div class="row justify-content-center">
-        <fa-icon [icon]="faFacebookSquare" class="socialmedia-icons"></fa-icon>
-        <fa-icon [icon]="faInstagram" class="socialmedia-icons"></fa-icon>
-        <fa-icon [icon]="faSnapchatSquare" class="socialmedia-icons"></fa-icon>
-      </div>
+    <div class="row justify-content-center">
+      <p class="socialmedia-caption">Dont forget to follow us!</p>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-sm"></div>
+      <div class="col-sm">
+        <div class="row">
+          <div class="col-sm-1">&nbsp;</div>
+          <div class="col-sm-2">
+            <button mat-mini-fab color="accent">
+              <a href="https://www.facebook.com/MenageAdultClub/"><fa-icon [icon]="faFacebookF" class="socialmedia-icons"></fa-icon></a>
+            </button>
+          </div>
+          <div class="col-sm-2">
+            <button mat-mini-fab color="accent">
+              <a href="https://www.instagram.com/menageadultclub"><fa-icon [icon]="faInstagram" class="socialmedia-icons"></fa-icon></a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm"></div>
+      <!--<button mat-mini-fab color="accent">
+        <fa-icon [icon]="faSnapchatSquare" class="socialmedia-icons"></fa-icon>
+      </button>-->
+    </div>
+  </div>
 </div>

@@ -19,12 +19,21 @@
     letter-spacing: 2px;
     word-spacing: 4px;
 }
+.menage-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  color: #065ed5 !important;
+}
 
 .navbar {
     @extend %menage-navigation;
     @extend %menage-nav-links;
 }
-.nav-brand {
+#nav-brand {
   color: white !important;
 }
 a:hover {

@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" [ngx-scroll-to]="'#home'">M&Egrave;NAGE</a>
+    <a class="menage-brand">M&Egrave;NAGE</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,13 +20,13 @@
         <!--</a>-->
 
         <!--<a href="#entertainers">-->
-          <button [ngx-scroll-to]="'#entertainers'" mat-flat-button color="warn" class="nav-btn">
+          <button [hidden]="!show" mat-flat-button color="warn" class="nav-btn">
             Entertainers
           </button>
         <!--</a>-->
 
         <a href="#gallery">
-          <button mat-flat-button color="warn" class="nav-btn">
+          <button [hidden]="!show" mat-flat-button color="warn" class="nav-btn">
             Gallery
           </button>
         </a>
@@ -34,14 +34,13 @@
 
 
         <!--<a href="#reservations"-->
-        <!--<a [ngx-scroll-to]="'#reservations'">-->
           <button [ngx-scroll-to]="'#reservations'" mat-flat-button color="warn" class="nav-btn">
             Reservations
           </button>
         <!--</a>-->
 
         <!--<a href="#contact">-->
-          <button [ngx-scroll-to]="'contact-section'" mat-flat-button color="warn" class="nav-btn">
+          <button [ngx-scroll-to]="'#contact'" mat-flat-button color="warn" class="nav-btn">
             Contact
           </button>
         <!--</a>-->
