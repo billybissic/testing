@@ -7,9 +7,7 @@ import 'rxjs/add/operator/catch';
 import { SimpleContent} from '../../controllers/content/simple-content';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SimpleContentService {
 
   constructor(private http: Http ) { }

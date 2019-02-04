@@ -14,8 +14,8 @@ export class ReservationsService {
 
   constructor(private http: Http) { }
 
-  // serverUrl = 'http://www.menageadultclub.com:8080/bookinginquiry-service-uat/BookingInquiryServices/';
-  serverUrl = 'http://localhost:8080/bookinginquiry-service/BookingInquiryServices/';
+  serverUrl = 'http://cs1.menageadultclub.com:8080/bookinginquiry-service/BookingInquiryServices/';
+  //serverUrl = 'http://localhost:8080/bookinginquiry-service/BookingInquiryServices/';
 
   addNewReservation(reservation: ReservationInterface): Observable<any>{
     const url = this.serverUrl + 'createInquiry';

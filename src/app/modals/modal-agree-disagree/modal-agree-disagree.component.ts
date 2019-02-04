@@ -27,7 +27,7 @@ export class ModalAgreeDisagreeComponent implements OnInit {
     this.activeModal.close();
   }
 
-  close(): void {
+  disagree(): void {
     this.modalCommunicationService.changeMessage('false');
     this.activeModal.close();
   }

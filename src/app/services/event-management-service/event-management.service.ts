@@ -18,10 +18,11 @@ export class EventManagementService {
               private router:Router) { }
 
   //mongoUrl = 'http://localhost:8080/calendar-services/api/CalendarEvents/';
-  mongoUrl = 'http://localhost:8080/calendar-service/api/CalendarEvents/';
-  //mongoUrl = 'http://cs1.menageadultclub.com:8080/calendar-services/api/CalendarEvents/'
+  //mongoUrl = 'http://localhost:8080/calendar-service/api/CalendarEvents/';
+  mongoUrl = 'http://cs1.menageadultclub.com:8080/calendar-service/api/CalendarEvents/';
   //mysqlUrl = 'http://localhost:8080/event-management-service/api/EventManagementService/';
-  mysqlUrl = 'http://localhost:8080/event-management-service/api/EventManagementService/';
+  mysqlUrl = 'http://cs1.menageadultclub.com:8080/event-management-service/api/EventManagementServices/';
+  //mysqlUrl = 'http://localhost:8080/event-management-service/api/EventManagementService/';
 
   getEvents() {
     let url = this.mongoUrl + 'getCalendarEvents';

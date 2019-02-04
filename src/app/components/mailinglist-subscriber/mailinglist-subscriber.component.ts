@@ -59,7 +59,8 @@ export class MailinglistSubscriberComponent implements OnInit {
 
     let ageCheckResults = this.ageCheck(moment(this.mailingListForm.controls['birthday'].value).format('YYYY-MM-DD'));
 
-    if(ageCheckResults === 0) {
+    console.log(ageCheckResults);
+    if(ageCheckResults >= 0) {
       this.subscriber.birthDay = moment(this.mailingListForm.controls['birthday'].value).format('YYYY-MM-DD');
     } else {
       /* throw error message to user */
@@ -92,12 +93,13 @@ export class MailinglistSubscriberComponent implements OnInit {
     /******NOTE*******
      * if the result is less than zero the person is under age
      */
+    console.log(currentThreshhold.diff(birthday, 'years'));
     return currentThreshhold.diff(birthday, 'years');
   }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 2000}
+      duration: 6000}
       );
   }
 }

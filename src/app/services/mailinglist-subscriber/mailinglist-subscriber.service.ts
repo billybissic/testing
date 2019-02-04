@@ -10,8 +10,8 @@ export class MailinglistSubscriberService {
 
   constructor(private http:Http) { }
 
-  //serverUrl = 'http://www.menageadultclub.com:8080/mailinglist-service-uat/MailingListServices/';
-  serverUrl = 'http://localhost:8080/mailinglist-service/MailingListServices/';
+  serverUrl = 'http://cs1.menageadultclub.com:8080/mailinglist-service/MailingListServices/';
+  //serverUrl = 'http://localhost:8080/mailinglist-service/MailingListServices/';
 
 
   addNewSubscriber(subscriber: Subscriber): Observable<any>{

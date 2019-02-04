@@ -38,7 +38,7 @@ export class VerticalTimelineComponent implements OnInit {
 
   getImageLink(imageName: string): string {
     // console.log(imageName);
-    let imagelink = 'http://localhost:8080/calendar-service/api/CalendarEvents/getEventFlyer?imageName=' + imageName;
+    let imagelink = 'http://cs1.menageadultclub.com:8080/calendar-service/api/CalendarEvents/getEventFlyer?imageName=' + imageName;
     // console.log(imagelink);
     return imagelink;
   }

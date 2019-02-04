@@ -72,8 +72,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { HorizontalTimelineComponent } from './components/horizontal-timeline/horizontal-timeline.component';
 import { MenageTimelineComponent } from './components/menage-timeline/menage-timeline.component';
-import { EmployeeApplicationsComponent } from './components/employee-applications/employee-applications.component';
-import { EntertainerApplicationsComponent } from './components/entertainer-applications/entertainer-applications.component';
+// import { EmployeeApplicationsComponent } from './components/employee-applications/employee-applications.component';
+// import { EntertainerApplicationsComponent } from './components/entertainer-applications/entertainer-applications.component';
 
 /* modal types */
 import { ModalComponent} from './modals/modal/modal.component';
@@ -87,6 +87,9 @@ import { ErrorMessageComponent } from './components/modal-templates/error-messag
 import { ReadMessageComponent } from './components/modal-templates/read-message/read-message.component';
 import { SendMessageComponent } from './components/modal-templates/send-message/send-message.component';
 import { DeleteConfirmationComponent } from './components/modal-templates/delete-confirmation/delete-confirmation.component';
+import { LogoutComponent } from './components/modal-templates/logout/logout.component';
+import { LoginComponent } from './components/modal-templates/login/login.component';
+import { LightboxComponent } from './components/modal-templates/lightbox/lightbox.component';
 
 /* services */
 import { ModalCommunicationService } from './services/modal-communication-service/modal-communication.service';
@@ -126,8 +129,8 @@ const appRoutes: Routes = [
     ModalOkCancelComponent,
     ModalCancelComponent,
     ModalOkComponent,
-    EmployeeApplicationsComponent,
-    EntertainerApplicationsComponent,
+    /*EmployeeApplicationsComponent,
+    EntertainerApplicationsComponent,*/
     ErrorMessageComponent,
     ReadMessageComponent,
     SendMessageComponent,
@@ -142,7 +145,10 @@ const appRoutes: Routes = [
     ContentWarningModalComponent,
     ModalVanillaComponent,
     ContactComponent,
-    VerticalTimelineComponent
+    VerticalTimelineComponent,
+    LogoutComponent,
+    LoginComponent,
+    LightboxComponent
   ],
   imports: [
     BrowserModule,
