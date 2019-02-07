@@ -11,6 +11,8 @@ import {ContentWarningModalComponent} from './menage-modals/content-warning-moda
 
 import {ModalCommunicationService} from './services/modal-communication-service/modal-communication.service';
 
+import { environment } from '../environments/environment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,6 +21,8 @@ import {ModalCommunicationService} from './services/modal-communication-service/
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'menage-trois';
   private message: string;
+
+  private mailingListService = environment.mailingListService;
 
   cookieValue = 'UNKNOWN';
   faBars = faBars;
@@ -33,6 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // this.cookieService.set( 'AgeVerification', 'Hello World' );
     // this.cookieService.delete('AgeVerification');
+    console.log(this.mailingListService);
     console.log(this.cookieValue);
     // this.getSiteDisclaimer();
     // this.isAgeVerified();
