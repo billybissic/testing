@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { environment } from '../../../environments/environment';
 import { SimpleContent} from '../../controllers/content/simple-content';
 
 
@@ -12,8 +13,7 @@ export class SimpleContentService {
 
   constructor(private http: Http ) { }
 
-  // mongoUrl = 'http://cs1.menageadultclub.com:8080/content-management-services/api/ContentManagement/';
-  mongoUrl = 'http://localhost:8080/content-management-services/api/ContentManagement/';
+  mongoUrl = environment.simpleContentService;
 
   getSimpleContentById(_id: string) {
     const url = `${this.mongoUrl}getSimpleContentById/${_id}`;

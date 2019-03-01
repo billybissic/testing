@@ -5,6 +5,8 @@ import { CalendarEvent} from '../../controllers/events/calendar-event.interface'
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
 import scrollIntoView from 'smooth-scroll-into-view-if-needed';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'app-vertical-timeline',
   templateUrl: './vertical-timeline.component.html',
@@ -15,12 +17,15 @@ export class VerticalTimelineComponent implements OnInit {
   calendarEvents: any[] = [];
   calendarJumps: any[] = [];
 
+  eventManagementUrl = environment.calendarEventService;
+
   constructor(private eventManagementService: EventManagementService,
               private _scrollToService: ScrollToService) {
   }
 
   ngOnInit() {
     this.retrieveEvents();
+    console.log(this.eventManagementUrl);
   }
 
   private retrieveEvents(): void {
@@ -36,11 +41,36 @@ export class VerticalTimelineComponent implements OnInit {
         });
   }
 
+
   getImageLink(imageName: string): string {
-    // console.log(imageName);
-    let imagelink = 'http://cs1.menageadultclub.com:8080/calendar-service/api/CalendarEvents/getEventFlyer?imageName=' + imageName;
+    /* get file ext */
+    console.log("Image Name: " + imageName);
+    let fileExt: string;
+    let imageLink: string;
+
+    fileExt = imageName.slice((imageName.lastIndexOf(".") - 1 >>> 0) + 2);
+    if (fileExt.toLowerCase() === 'jpg' || fileExt.toLowerCase() === 'jpeg')
+    {
+      imageLink = this.eventManagementUrl + 'getEventFlyerJpeg?imageName=' + imageName;
+      console.log(imageLink);
+    }
+    if (fileExt.toLowerCase() === 'png')
+    {
+      imageLink = this.eventManagementUrl + 'getEventFlyerPng?imageName=' + imageName;
+      console.log(imageLink);
+    }
+
+    if (fileExt.toLowerCase() === 'gif')
+    {
+      imageLink = this.eventManagementUrl + 'getEventFlyerPng?imageName' + imageName;
+      console.log(imageLink);
+    }
+    //console.log("File ext: " + imageName.slice((imageName.lastIndexOf(".") - 1 >>> 0) + 2));
+
+
+    //let imagelink = 'http://cs1.menageadultclub.com:8080/calendar-service/api/CalendarEvents/getEventFlyer?imageName=' + imageName;
     // console.log(imagelink);
-    return imagelink;
+    return imageLink;
   }
 
   public jumpToEvent(eventId: any) {

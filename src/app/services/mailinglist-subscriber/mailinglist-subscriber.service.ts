@@ -4,15 +4,14 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { Subscriber } from './../../controllers/subscribers/subscriber';
+import { environment} from '../../../environments/environment';
 
 @Injectable()
 export class MailinglistSubscriberService {
 
   constructor(private http:Http) { }
 
-  serverUrl = 'http://cs1.menageadultclub.com:8080/mailinglist-service/MailingListServices/';
-  //serverUrl = 'http://localhost:8080/mailinglist-service/MailingListServices/';
-
+  serverUrl = environment.mailingListService;
 
   addNewSubscriber(subscriber: Subscriber): Observable<any>{
     console.log("inside service for addNewSubscriber");

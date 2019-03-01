@@ -11,7 +11,7 @@
 <div id="timeline" class="timeline">
   <mdb-card class="container left" *ngFor="let event of calendarEvents" id="{{event._id}}">
     <!--Card image-->
-    <mdb-card-img src="{{getImageLink(event.details.image_names)}}" alt="{{event.details.title}}"></mdb-card-img>
+    <mdb-card-img src="{{getImageLink(event.details.image_names)}}" alt="{{event.details.title}}" style="max-width: 500px; height: auto;"></mdb-card-img>
     <!--Card content-->
     <mdb-card-body>
 

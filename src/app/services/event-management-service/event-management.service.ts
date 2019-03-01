@@ -9,6 +9,7 @@ import { EventType } from '../../controllers/events/event-type';
 import { EventFrequency } from '../../controllers/events/event-frequency';
 import { CalendarEvent } from '../../controllers/events/calendar-event.interface';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 
@@ -17,12 +18,8 @@ export class EventManagementService {
   constructor(private http:Http,
               private router:Router) { }
 
-  //mongoUrl = 'http://localhost:8080/calendar-services/api/CalendarEvents/';
-  //mongoUrl = 'http://localhost:8080/calendar-service/api/CalendarEvents/';
-  mongoUrl = 'http://cs1.menageadultclub.com:8080/calendar-service/api/CalendarEvents/';
-  //mysqlUrl = 'http://localhost:8080/event-management-service/api/EventManagementService/';
-  mysqlUrl = 'http://cs1.menageadultclub.com:8080/event-management-service/api/EventManagementServices/';
-  //mysqlUrl = 'http://localhost:8080/event-management-service/api/EventManagementService/';
+  mongoUrl = environment.calendarEventService;
+  mysqlUrl = environment.eventManagementService;
 
   getEvents() {
     let url = this.mongoUrl + 'getCalendarEvents';
