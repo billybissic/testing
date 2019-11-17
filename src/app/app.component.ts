@@ -35,6 +35,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.modalCommunicationService.currentMessage
       .subscribe( message => this.message = message );
 
+    /* TODO: Complete age verification and cookie use once owner is ready */
     // this.cookieService.set( 'AgeVerification', 'Hello World' );
     // this.cookieService.delete('AgeVerification');
     console.log(this.mailingListService);
@@ -56,7 +57,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     const cookieExists: boolean = this.cookieService.check('AgeVerification');
     console.log('Age Verification Boolean');
     console.log(cookieExists);
-    let dialogResponse = false;
+    const dialogResponse = false;
 
     if (cookieExists === false) {
       this.modalConfig.backdrop = 'static';

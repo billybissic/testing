@@ -1,0 +1,89 @@
+@import './../../../sass/variables.scss';
+@import './../../../../src/menage-palettes';
+@import '~@angular/material/theming';
+
+.reservation-background {
+  // background-image: url("../../../assets/images/DSC_0073.JPG");
+  // -webkit-filter: grayscale(100%);
+  // filter: grayscale(100%);
+  // opacity: .7;
+  height: 45em;
+  width: 100%;
+  // image-resolution: 1080;
+  background-repeat: no-repeat;
+}
+
+.day {
+  font-family: 'Great Vibes', cursive;
+  font-size: 25pt;
+  color: #fff;
+  text-align: center;
+  padding-top: 1em;
+  font-weight: 200;
+}
+
+.day-details {
+  font-size: 12pt;
+  color: #fff;
+  text-align: center;
+  font-weight: 200;
+  padding-top: .2rem;
+}
+
+.reservation-jumbtron {
+  background-color: rgba(0, 0, 0, 0.849);
+  box-shadow: 0, 20px, 30px rgba(0, 0, 0, 0.795);
+}
+
+.specials-header {
+  font-family: 'Great Vibes', cursive;
+  //font-family: Verdana, Geneva, Tahoma, sans-serif;
+  //font-variant-caps: all-small-caps;
+  //font-weight: bolder;
+  //letter-spacing: 1pt;
+  font-size: 40pt;
+  padding-top: 1em;
+  line-height: 9pt;
+  word-spacing: 1pt;
+  font-weight: 100;
+  text-align: center;
+  color:white;
+}
+
+
+::ng-deep .mat-select-panel {
+  background: $menage-pink;
+}
+.reservation-controls-row {
+  margin-bottom: 5px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+select option {
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.712);
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  //text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.input {
+  font-size: 10px;
+}
+
+.mat-form-field.mat-form-field {
+  font-size: 12px;
+  width: 100%;
+}

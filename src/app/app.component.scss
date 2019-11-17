@@ -66,6 +66,18 @@ a:not([href]):not([tabindex]) {
         background-repeat: no-repeat;
     }
 
+    .specials-background {
+    //background-image: url("../assets/images/DSC_0073.JPG");
+    //-webkit-filter: grayscale(100%);
+    //filter: grayscale(100%);
+    opacity: .7;
+    height: 45em;
+    width: 100%;
+    //image-resolution: 1080;
+      background-color: #000000;
+    background-repeat: no-repeat;
+  }
+
     /* reservation section styles */
     .reservation-section {
         background-color: black;

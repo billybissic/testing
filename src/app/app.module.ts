@@ -1,5 +1,5 @@
 import { NgModule, OnInit, NO_ERRORS_SCHEMA} from '@angular/core';
-import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import 'hammerjs';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -61,20 +61,13 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 
-
 import { TestComponent } from './test/test.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-/*import { GeolocationComponent } from './components/geolocation/geolocation.component';*/
-/*import { PhotogalleryComponent } from './photogallery/photogallery.component';*/
-/*import { MenageCalendarComponent } from './menage-calendar/menage-calendar.component';*/
 import { MailinglistSubscriberComponent } from './components/mailinglist-subscriber/mailinglist-subscriber.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { HorizontalTimelineComponent } from './components/horizontal-timeline/horizontal-timeline.component';
 import { MenageTimelineComponent } from './components/menage-timeline/menage-timeline.component';
-// import { EmployeeApplicationsComponent } from './components/employee-applications/employee-applications.component';
-// import { EntertainerApplicationsComponent } from './components/entertainer-applications/entertainer-applications.component';
-
 /* modal types */
 import { ModalComponent} from './modals/modal/modal.component';
 import { ModalConfirmComponent } from './modals/modal-confirm/modal-confirm.component';
@@ -87,7 +80,6 @@ import { ErrorMessageComponent } from './components/modal-templates/error-messag
 import { ReadMessageComponent } from './components/modal-templates/read-message/read-message.component';
 import { SendMessageComponent } from './components/modal-templates/send-message/send-message.component';
 import { DeleteConfirmationComponent } from './components/modal-templates/delete-confirmation/delete-confirmation.component';
-import { LogoutComponent } from './components/modal-templates/logout/logout.component';
 import { LoginComponent } from './components/modal-templates/login/login.component';
 import { LightboxComponent } from './components/modal-templates/lightbox/lightbox.component';
 
@@ -106,6 +98,7 @@ import { ModalAgreeDisagreeComponent } from './modals/modal-agree-disagree/modal
 import { ContentWarningModalComponent } from './menage-modals/content-warning-modal/content-warning-modal.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { VerticalTimelineComponent } from './components/vertical-timeline/vertical-timeline.component';
+import { MenageSpecialsComponent } from './components/menage-specials/menage-specials.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent }
@@ -116,9 +109,6 @@ const appRoutes: Routes = [
     AppComponent,
     TestComponent,
     NavigationComponent,
-    /*GeolocationComponent,*/
-    /*PhotogalleryComponent,*/
-    /*MenageCalendarComponent,*/
     MailinglistSubscriberComponent,
     HomeComponent,
     ReservationsComponent,
@@ -129,8 +119,6 @@ const appRoutes: Routes = [
     ModalOkCancelComponent,
     ModalCancelComponent,
     ModalOkComponent,
-    /*EmployeeApplicationsComponent,
-    EntertainerApplicationsComponent,*/
     ErrorMessageComponent,
     ReadMessageComponent,
     SendMessageComponent,
@@ -146,9 +134,9 @@ const appRoutes: Routes = [
     ModalVanillaComponent,
     ContactComponent,
     VerticalTimelineComponent,
-    LogoutComponent,
     LoginComponent,
-    LightboxComponent
+    LightboxComponent,
+    MenageSpecialsComponent
   ],
   imports: [
     BrowserModule,
@@ -234,8 +222,6 @@ const appRoutes: Routes = [
 })
 export class AppModule implements OnInit {
 
-  themeClass: string;
-
   constructor(private overlayContainer: OverlayContainer) {
   }
 
@@ -246,7 +232,6 @@ export class AppModule implements OnInit {
       overlayContainerClasses.remove(...themeClassesToRemove);
     }
     overlayContainerClasses.add('theme');
-    // overlayContainer.getContainerElement().classList.add('theme');
   }
 
 }

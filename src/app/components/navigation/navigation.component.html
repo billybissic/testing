@@ -7,43 +7,33 @@
     <div class="collapse navbar-collapse" id="navbarsExample04">
       <ul class="navbar-nav mr-auto">
 
-        <!--<a href="#home">-->
-          <button [ngx-scroll-to]="'#home'" mat-flat-button color="warn" class="nav-btn">
-            Home
-          </button>
-        <!--</a>-->
+        <button [ngx-scroll-to]="'#home'" mat-flat-button color="warn" class="nav-btn">
+           Home
+        </button>
 
-        <!--<a href="#events">-->
+        <button [ngx-scroll-to]="'#specials'" mat-flat-button color="warn" class="nav-btn">
+          Club Specials
+        </button>
+
         <button [ngx-scroll-to]="'#events'" mat-flat-button color="warn" class="nav-btn">
           Events
         </button>
-        <!--</a>-->
 
-        <!--<a href="#entertainers">-->
-          <button [hidden]="!show" mat-flat-button color="warn" class="nav-btn">
-            Entertainers
-          </button>
-        <!--</a>-->
+        <button [hidden]="!show" mat-flat-button color="warn" class="nav-btn">
+          Entertainers
+        </button>
 
-        <a href="#gallery">
-          <button [hidden]="!show" mat-flat-button color="warn" class="nav-btn">
-            Gallery
-          </button>
-        </a>
+        <button [hidden]="!show" mat-flat-button color="warn" class="nav-btn">
+           Gallery
+        </button>
 
+        <button [ngx-scroll-to]="'#reservations'" mat-flat-button color="warn" class="nav-btn">
+          Reservations
+        </button>
 
-
-        <!--<a href="#reservations"-->
-          <button [ngx-scroll-to]="'#reservations'" mat-flat-button color="warn" class="nav-btn">
-            Reservations
-          </button>
-        <!--</a>-->
-
-        <!--<a href="#contact">-->
-          <button [ngx-scroll-to]="'#contact'" mat-flat-button color="warn" class="nav-btn">
-            Contact
-          </button>
-        <!--</a>-->
+        <button [ngx-scroll-to]="'#contact'" mat-flat-button color="warn" class="nav-btn">
+          Contact
+        </button>
       </ul>
     </div>
   </nav>

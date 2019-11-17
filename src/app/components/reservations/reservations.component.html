@@ -1,6 +1,5 @@
 <div class="container">
-    <!--<div class="row">&nbsp;</div>
-    <div class="row">&nbsp;</div>-->
+
     <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
@@ -18,32 +17,32 @@
                 <input matInput placeholder="First Name*" formControlName="firstName">
               </mat-form-field>
             </div>
-              <!--<input formControlName="firstName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="first name" required>-->
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <input matInput placeholder="Last Name*" formControlName="lastName">
               </mat-form-field>
-              <!--<input formControlName="lastName" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="last name" required>-->
             </div>
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <input matInput placeholder="Email*" formControlName="email">
               </mat-form-field>
-              <!--<input formControlName="email" class="form-control form-control-sm reservation-controls reservation-controls-row" type="email" placeholder="email" required>-->
             </div>
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <span matPrefix>+1 &nbsp;</span>
                 <input matInput placeholder="Phone Number (###)-###-####" type="phone" formControlName="phone">
               </mat-form-field>
-              <!--<input formControlName="phone" class="form-control form-control-sm reservation-controls reservation-controls-row" type="phone" placeholder="phone" required>-->
             </div>
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <input matInput placeholder="Number of People in Party" type="number" formControlName="partySize">
               </mat-form-field>
-              <!--<input formControlName="partySize" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Number of people in party" required>-->
             </div>
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input" color="accent">
                 <input matInput [matDatepicker]="picker" value="" placeholder="Desired Day to Reserve*" formControlName="desiredReservationsDate">
@@ -51,17 +50,14 @@
                 <mat-datepicker touchUi #picker></mat-datepicker>
               </mat-form-field>
             </div>
-            <!--<div [formGroup]="reservationsForm">
-              <input formControlName="desiredReservationsDate"  value="" class="form-control form-control-sm reservation-controls reservation-controls-row" type="date" placeholder="Select Date" required>
-            </div>-->
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <input type="time" matInput atp-time-picker placeholder="Desired Time to Reserve" formControlName="desiredReservationsTime"
                 theme="dark" arrowStyle="{'background': '#ff00fe', 'color': 'white'}">
               </mat-form-field>
             </div>
-              <!--<input formControlName="desiredReservationsTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="time" placeholder="Select Time" required>-->
-            <!--</div>-->
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <mat-select placeholder="Preferred Contact Time" formControlName="contactTime">
@@ -70,11 +66,8 @@
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-              <!--<select formControlName="contactTime" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Best Contact Time" required>
-                <option value="" selected disabled hidden>Perferred Contact Time</option>
-                <option *ngFor="let time of contactTimes" value="{{time.contact_timeframe_id}}">{{time.contact_timeframe}}</option>
-              </select>-->
             </div>
+
             <div [formGroup]="reservationsForm">
               <mat-form-field class="reservation-input">
                 <mat-select placeholder="Preferred Reservation Type" formControlName="reservationType">
@@ -83,14 +76,10 @@
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-              <!--<select formControlName="reservationType" class="form-control form-control-sm reservation-controls reservation-controls-row" type="text" placeholder="Reservation Type" requred>
-                <option value="" selected disabled hidden>Reservation Type</option>
-                <option *ngFor="let type of reservationTypes" value="{{type.inquiry_type_id}}">{{type.inquiry_type_name}}</option>
-              </select>-->
             </div>
+
             <div>
               <button mat-raised-button color="accent" class="form-control reservation-button" type="submit">Make Reservation</button>
-              <!--<button class="reservation-button form-control reservation-controls-row" type="submit">Make Reservation</button>-->
             </div>
           </form>
         </div>
