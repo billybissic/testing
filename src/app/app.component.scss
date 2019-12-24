@@ -218,6 +218,20 @@ a:not([href]):not([tabindex]) {
     }
 }
 
+@media screen and (max-width:1920px) {
+  .menage-landing-page {
+    margin-top: -15px;
+    margin-left: -25px;
+    background-color: rgba(41, 40, 40, 1);
+    height: 100vh;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:1600px) {
+
+}
+
 @media screen and (max-width:720px) {
     .menage-landing-page {
         margin-top: -15px;

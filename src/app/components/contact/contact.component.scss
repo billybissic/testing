@@ -135,8 +135,75 @@
     width: 80vw;
   }
 }
+@media screen and (max-width:1920px) {
+
+  %contact-header-desktop-1920 {
+    @include contact-header;
+  }
+
+  .contact-header {
+    @extend %contact-header-desktop-1920;
+    margin-top: .2em;
+    margin-left: -30vw;
+    font-size: 70pt;
+    line-height: 9pt;
+    word-spacing: 1pt;
+    font-weight: 100;
+  }
+
+  %address-text-desktop-1920 {
+    @include address-text;
+  }
+  .address-text {
+    @extend %address-text-desktop-1920;
+    line-height: .8em;
+    letter-spacing: 1pt;
+    font-size: .9em;
+    font-weight: 300;
+    margin-left: -30vw;
+  }
+
+  %map-frame-desktop {
+    @include map-frame;
+  }
+
+  %map-frame-mobile-width-1920 {
+    @include map-frame;
+  }
+
+  .map-frame {
+    @extend %map-frame-mobile-width-1920;
+    width: 60vw;
+    margin-left: -30vw;
+  }
+
+  %social-media-icons-desktop-1920 {
+    @include social-media-icons;
+  }
+
+  .socialmedia-icons {
+    @extend %social-media-icons-desktop-1920;
+    font-size: 1em;
+    line-height: .3em;
+    margin-left: -15vw;
+  }
+
+  %social-media-caption-desktop-width-1920 {
+    @include social-media-caption;
+  }
+
+  .socialmedia-caption {
+    @extend %social-media-caption-desktop-width-1920;
+    font-size: 1.8em;
+    margin-left: -30vw;
+    font-weight: 200;
+    line-height: 0;
+  }
+}
 
 @media screen and (max-height:2160px) and (min-height: 1025px) {
+
+
   %map-frame-desktop-height {
     @include map-frame;
   }
@@ -146,6 +213,7 @@
     height: 70vh;
   }
 }
+
 
 @media screen and (max-height: 1024px) and (min-height: 821px) {
 
@@ -228,7 +296,7 @@
     font-weight: 100;
   }
 
-  %social-media-icons-tablet-sm {
+  /*%social-media-icons-tablet-sm {
     @include social-media-icons;
   }
 
@@ -236,7 +304,7 @@
     @extend %social-media-icons-tablet-sm;
     font-size: 1em;
     line-height: .3em;
-  }
+  }*/
 }
 
 @media screen and (max-height:720px) and (min-height:400px) {

@@ -7,12 +7,14 @@ import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import {LegalModalComponent} from './menage-modals/legal-modal/legal-modal.component';
 import { CookieService } from 'ngx-cookie-service';
+import * as _moment from 'moment';
 import {ContentWarningModalComponent} from './menage-modals/content-warning-modal/content-warning-modal.component';
 
 import {ModalCommunicationService} from './services/modal-communication-service/modal-communication.service';
 
 import { environment } from '../environments/environment';
 
+const moment = _moment;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,14 +36,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.modalCommunicationService.currentMessage
       .subscribe( message => this.message = message );
-
-    /* TODO: Complete age verification and cookie use once owner is ready */
-    // this.cookieService.set( 'AgeVerification', 'Hello World' );
-    // this.cookieService.delete('AgeVerification');
     console.log(this.mailingListService);
-    console.log(this.cookieValue);
+
     // this.getSiteDisclaimer();
-    // this.isAgeVerified();
+    this.isAgeVerified();
   }
 
   ngAfterViewInit() {
@@ -53,35 +51,31 @@ export class AppComponent implements OnInit, AfterViewInit {
               private cookieService: CookieService,
               private modalCommunicationService: ModalCommunicationService) {}
 
-  isAgeVerified(): boolean {
-    const cookieExists: boolean = this.cookieService.check('AgeVerification');
-    console.log('Age Verification Boolean');
-    console.log(cookieExists);
-    const dialogResponse = false;
+  isAgeVerified(): void {
+    const ageVerificationExists: boolean = this.cookieService.check('agVerified');
+    const verificationExpirationExists: boolean = this.cookieService.check('verificationExpiration');
 
-    if (cookieExists === false) {
-      this.modalConfig.backdrop = 'static';
-      this.modalConfig.keyboard = false;
-      const modalRef = this.modalService.open(ContentWarningModalComponent, {size: 'lg'});
-      modalRef.componentInstance.title = 'Content Warning';
-      modalRef.componentInstance.documentName = 'ContentWarning';
-
-      // get response from modal service
-      // if user disagrees to the content warning redirect to error page
-      if (dialogResponse === false) {
-        return false;
+    if (ageVerificationExists) {
+      console.log('Verification exists, checking expiration');
+      if (verificationExpirationExists) {
+        console.log('Expiration exits. Checking to see if current time is beyond expiration date.');
+        const verificationExpiration: string = this.cookieService.get('verificationExpiration');
+        const currentDate: string = moment().format('YYYY-MM-DD');
+        const dateA = new Date(verificationExpiration);
+        const dateB = new Date(currentDate);
+        console.log('dateA:' + dateA);
+        console.log('dateB:' + dateB);
+        if (dateB <= dateA) {
+          console.log('Verification date is good.');
+          // do nothing, go to the site
+        } else {
+          console.log('Verification date is bad.');
+          window.location.href = 'http://www.menageadultclub.com';
+        }
       }
-      // if user agrees to the content warning continue to the site
-      if (dialogResponse === true) {
-        return true;
-      }
-
     } else {
-      // check the age of the cookie, if it is expired delete and create a new cookie
-      this.cookieService.delete('AgeVerification');
-      const modalRef = this.modalService.open(ContentWarningModalComponent, {size: 'lg'});
-      modalRef.componentInstance.title = 'Content Warning';
-      modalRef.componentInstance.document = 'ContentWarning';
+      console.log('Age verification not found sending back to gate!');
+      window.location.href = 'http://www.menageadultclub.com';
     }
   }
 
